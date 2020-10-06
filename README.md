@@ -2,6 +2,9 @@
 情報セキュリティ1年授業資料
 
 ## 動作環境の理解
+Web基礎資料  
+https://github.com/takujiozaki/PHP_BASIC/blob/main/PDF/Web%E5%9F%BA%E7%A4%8E.pdf
+
 モジュール版とCGI  
 PHP_CLI  
 
