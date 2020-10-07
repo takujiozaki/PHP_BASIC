@@ -49,7 +49,7 @@ $記号で変数を識別する
 
 *配列、オブジェクト型は後日解説
 ### データ型の確認
-gettype()関数を使用
+gettype()関数を使用  
 https://www.php.net/manual/ja/function.gettype.php
 
 ### 可変変数
