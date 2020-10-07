@@ -5,8 +5,10 @@
 Web基礎資料  
 https://github.com/takujiozaki/PHP_BASIC/blob/main/PDF/Web%E5%9F%BA%E7%A4%8E.pdf
 
-モジュール版とCGI  
-PHP_CLI  
+- モジュール版とCGI
+- PHP_CLI
+
+https://officetkj.sakura.ne.jp/info_architect/index.html
 
 ## 基本構文
 ### PHPブロック  
