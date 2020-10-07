@@ -44,8 +44,11 @@ $記号で変数を識別する
 |  配列型  |  --  |
 |  オブジェクト型  |  --  |
 |  null  |  定数null, 何も代入されていない, unset()後  |
+
 *配列、オブジェクト型は後日解説
 ### データ型の確認
+gettype()関数を使用
+https://www.php.net/manual/ja/function.gettype.php
 
 ### 可変変数
 ```
