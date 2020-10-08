@@ -66,6 +66,20 @@ echo SCHOOL1, PHP_EOL;
 const SCHOOL2 = '創造社デザイン専門学校';
 echo SCHOOL2, PHP_EOL;
 ```
+## 基本練習
+SAMPLE01ディレクトリ  
+
+## ERROR
+### エラーの種類
+- E_NOTICE
+- E_WARNING
+- E_DEPRECATED
+### エラー表示
+```
+<?php
+//ブラウザ画面にエラーを表示
+ini_set('display_errors', "On");
+```
 
 ## 四則演算
 |  演算子  |  例  |
