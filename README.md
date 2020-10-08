@@ -1,12 +1,17 @@
 # PHP_BASIC
 情報セキュリティ1年授業資料
 
+## PHP マニュアル
+https://www.php.net/manual/ja/index.php
+
 ## 動作環境の理解
 Web基礎資料  
 https://github.com/takujiozaki/PHP_BASIC/blob/main/PDF/Web%E5%9F%BA%E7%A4%8E.pdf
 
-モジュール版とCGI  
-PHP_CLI  
+- モジュール版とCGI
+- PHP_CLI
+
+https://officetkj.sakura.ne.jp/info_architect/index.html
 
 ## 基本構文
 ### PHPブロック  
@@ -34,6 +39,22 @@ echo文とvar_dump()関数
 半角英数アンダースコア記号が使用可能  
 先頭に数字を使用出来ない  
 $記号で変数を識別する  
+### データ型
+|  型  |  例  |
+| ---- | ---- |
+|  整数型  |  1, 0, -1  |
+|  浮動小数点型  |  1.2, 0.5   |
+|  文字列型  |  "Hello", "大川", "100", "true"  |
+|  論理型  |  true 又は false  |
+|  配列型  |  --  |
+|  オブジェクト型  |  --  |
+|  null  |  定数null, 何も代入されていない, unset()後  |
+
+*配列、オブジェクト型は後日解説
+### データ型の確認
+gettype()関数を使用  
+https://www.php.net/manual/ja/function.gettype.php
+
 ### 可変変数
 ```
 <?php
