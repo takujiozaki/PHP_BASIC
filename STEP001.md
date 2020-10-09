@@ -29,6 +29,18 @@ PHPの命令文は文末にセミコロン(;)が必要。
 ## 出力
 echo文とvar_dump()関数
 
+## ERROR
+### エラーの種類
+- E_NOTICE
+- E_WARNING
+- E_DEPRECATED
+### エラー表示
+```
+<?php
+//ブラウザ画面にエラーを表示
+ini_set('display_errors', "On");
+```
+
 ## 変数とデータ型
 ### 変数名の規則  
 半角英数アンダースコア記号が使用可能  
