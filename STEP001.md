@@ -1,3 +1,5 @@
+# PHP基礎 01
+
 ## 動作環境の理解
 Web基礎資料  
 https://github.com/takujiozaki/PHP_BASIC/blob/main/PDF/Web%E5%9F%BA%E7%A4%8E.pdf  
