@@ -11,11 +11,8 @@ https://github.com/takujiozaki/PHP_BASIC/blob/main/STEP001.md
 https://github.com/takujiozaki/PHP_BASIC/blob/main/STEP002.md
 
 
-## 繰り返し
-
-## 配列
-
-## 日付と時間
+## STEP3
+https://github.com/takujiozaki/PHP_BASIC/blob/main/STEP003.md
 
 ## 組込関数
 
