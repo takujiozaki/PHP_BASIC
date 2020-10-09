@@ -89,6 +89,7 @@ echo SCHOOL2, PHP_EOL;
 ```
 ## 基本練習
 SAMPLE01ディレクトリ  
+https://github.com/takujiozaki/PHP_BASIC/tree/main/SAMPLE01
 
 ## ERROR
 ### エラーの種類
