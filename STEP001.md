@@ -10,6 +10,12 @@ https://github.com/takujiozaki/PHP_BASIC/blob/main/PDF/Web%E5%9F%BA%E7%A4%8E.pdf
 
 https://officetkj.sakura.ne.jp/info_architect/index.html
 
+### ビルトインWebサーバー
+開発者サーバーの起動  
+```
+php -S localhost:8888
+```
+
 ## 基本構文
 ### PHPブロック  
 ```
