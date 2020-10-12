@@ -44,9 +44,33 @@ if( <条件> ){
 
 ## SWITCH構文
 https://www.php.net/manual/ja/control-structures.switch.php
+```
+//switch
+$b = "apple";
+
+switch($b){
+    case "apple":
+        echo "変数bはリンゴである";
+        break;
+    case "banana":
+        echo "変数bはバナナである";
+        break;
+    case "grape":
+        echo "変数bはブドウである";
+        break;
+    default:
+        echo "変数bはリンゴ、バナナ、ブドウ以外である";
+}
+```
 
 ## 三項演算子
 https://www.php.net/manual/ja/language.operators.comparison.php#language.operators.comparison.ternary
+```
+//三項演算子
+/*
+    条件 ? "trueの場合":"falseの場合";
+*/
+```
 
 ## HTML内にPHPを記述する例
 ```
