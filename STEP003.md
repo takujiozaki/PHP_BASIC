@@ -20,13 +20,56 @@ do{
 ```
 
 ### for構文
+```
+/*
+for(カウンター初期化; 条件; カウンターの増減){
+    //実行される処理
+}
+*/
+
+//1から10まで表示
+for($i = 1; $i <= 10; $i++){
+    echo $i, PHP_EOL;
+}
+
+```
 https://www.php.net/manual/ja/control-structures.for.php
 
 ## 配列
 https://www.php.net/manual/ja/language.types.array.php
 
+```
+//配列の定義(array関数)
+$car_functory = array("TOYOTA","NISSAN","HONDA","SUBARU");
+$car_functory[4] = "MITSUBISHI";
+var_dump($car_functory);
+echo $car_functory[1],PHP_EOL;
+
+//配列の定義(直接定義)
+$mortercycle_factory = ["HONDA","SUZUKI","YAMAHA","KAWASAKI",];
+var_dump($mortercycle_factory);
+echo $mortercycle_factory[3],PHP_EOL;
+
+//配列の定義(個別定義)
+$fruits[] = "apple";
+$fruits[] = "banana";
+$fruits[] = "grape";
+$fruits[] = "orange";
+var_dump($fruits);
+
+//全要素出力(for)
+for($i = 0;$i < count($car_functory); $i++){
+    echo $car_functory[$i], PHP_EOL;
+}
+```
 ### foreach構文
 https://www.php.net/manual/ja/control-structures.foreach.php
+```
+//全要素出力(foreach)
+foreach($mortercycle_factory as $factory){
+    echo $factory, PHP_EOL;
+}
+```
 
 ## 日付と時間
 https://www.php.net/manual/ja/function.date.php
