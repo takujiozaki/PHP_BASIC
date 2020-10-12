@@ -76,6 +76,7 @@ https://www.php.net/manual/ja/function.date.php
 
 ## 練習問題
 以下の出力をするコードを書きなさい。
+```
 **********
 *********
 ********
@@ -86,6 +87,7 @@ https://www.php.net/manual/ja/function.date.php
 ***
 **
 *
+```
 
 ### 解答例
 ```
