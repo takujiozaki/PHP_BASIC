@@ -42,5 +42,8 @@ if( <条件> ){
 }
 ```
 
+## SWITCH構文
+https://www.php.net/manual/ja/control-structures.switch.php　　
+
 ## 基本練習
 https://github.com/takujiozaki/PHP_BASIC/tree/main/SAMPLE02
