@@ -14,5 +14,6 @@ https://www.php.net/manual/ja/language.types.array.php
 https://www.php.net/manual/ja/control-structures.foreach.php
 
 ## 日付と時間
+https://www.php.net/manual/ja/function.date.php
 
 ## 練習問題
