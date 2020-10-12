@@ -86,5 +86,6 @@ $forecast = "fine";
 <?php } ?>
  ```
 
+
 ## 基本練習
 https://github.com/takujiozaki/PHP_BASIC/tree/main/SAMPLE02
