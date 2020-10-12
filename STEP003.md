@@ -75,3 +75,24 @@ foreach($mortercycle_factory as $factory){
 https://www.php.net/manual/ja/function.date.php
 
 ## 練習問題
+以下の出力をするコードを書きなさい。
+**********
+*********
+********
+*******
+******
+*****
+****
+***
+**
+*
+
+### 解答例
+```
+for($i = 10; $i > 0; $i--){
+    for($j = $i; $j > 0; $j--){
+        echo '*';
+    }
+    echo PHP_EOL;
+}
+```
