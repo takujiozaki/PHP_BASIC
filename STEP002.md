@@ -30,7 +30,7 @@ https://www.php.net/manual/ja/language.operators.comparison.php
 ### 真偽値判定
 boolean値以外、文字列や整数でも真偽値判定が可能。  
 詳細は下記URLを参照  
-https://www.php.net/manual/ja/types.comparisons.php  
+https://www.php.net/manual/ja/types.comparisons.php
 
 ## 条件分岐
 ```
@@ -43,10 +43,10 @@ if( <条件> ){
 ```
 
 ## SWITCH構文
-https://www.php.net/manual/ja/control-structures.switch.php　　
+https://www.php.net/manual/ja/control-structures.switch.php
 
 ## 三項演算子
-https://www.php.net/manual/ja/language.operators.comparison.php#language.operators.comparison.ternary  
+https://www.php.net/manual/ja/language.operators.comparison.php#language.operators.comparison.ternary
 
 ## 基本練習
 https://github.com/takujiozaki/PHP_BASIC/tree/main/SAMPLE02
