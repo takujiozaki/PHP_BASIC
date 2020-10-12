@@ -48,5 +48,19 @@ https://www.php.net/manual/ja/control-structures.switch.php
 ## 三項演算子
 https://www.php.net/manual/ja/language.operators.comparison.php#language.operators.comparison.ternary
 
+## HTML内にPHPを記述する例
+```
+<?php
+$forecast = "fine";
+?>
+<?php if($forecast == "fine"){ ?>
+<p>今日は晴です。</p>
+<?php }elseif($forecast == "cloud"){ ?>
+<p>今日は曇りです。</p>
+<?php }else{ ?>
+<p>今日は雨です。</p>
+<?php } ?>
+ ```
+
 ## 基本練習
 https://github.com/takujiozaki/PHP_BASIC/tree/main/SAMPLE02
