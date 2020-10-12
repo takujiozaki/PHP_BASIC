@@ -3,6 +3,21 @@
 ## 繰り返し
 ### while構文
 https://www.php.net/manual/ja/control-structures.while.php
+```
+//while
+$i = 0;
+while($i < 10){
+  echo $i,PHP_EOL;
+  $i++;
+}
+
+//do while
+$i = 0;
+do{
+  echo $i,PHP_EOL;
+  $i++;
+}while($i < 10);
+```
 
 ### for構文
 https://www.php.net/manual/ja/control-structures.for.php
