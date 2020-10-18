@@ -14,6 +14,18 @@ $scores = array(
 var_dump($scores);
 ```
 ## 関数
-https://www.php.net/manual/ja/language.functions.php
+https://www.php.net/manual/ja/funcref.php
 ### 組込関数
+PHPが標準で準備している関数(一部)
+#### 文字列(string)
+https://www.php.net/manual/ja/book.strings.php
+#### 配列(array)
+https://www.php.net/manual/ja/book.array.php
+#### 日付(date/time)
+https://www.php.net/manual/ja/refs.calendar.php
+#### 数学(math)
+https://www.php.net/manual/ja/book.math.php
+
 ### ユーザー定義関数
+開発者が自分で設定した関数　　
+https://www.php.net/manual/ja/functions.user-defined.php
