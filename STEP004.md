@@ -22,6 +22,7 @@ https://www.php.net/manual/ja/book.strings.php
 #### 配列(array)
 https://www.php.net/manual/ja/book.array.php
 #### 日付(date/time)
+https://www.php.net/manual/ja/function.date.php  
 https://www.php.net/manual/ja/refs.calendar.php
 #### 数学(math)
 https://www.php.net/manual/ja/book.math.php
