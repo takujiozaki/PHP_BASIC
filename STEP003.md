@@ -71,9 +71,6 @@ foreach($mortercycle_factory as $factory){
 }
 ```
 
-## 日付と時間
-https://www.php.net/manual/ja/function.date.php
-
 ## 練習問題
 以下の出力をするコードを書きなさい。
 ```
