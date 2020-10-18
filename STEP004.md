@@ -15,6 +15,7 @@ var_dump($scores);
 ```
 ## 関数
 https://www.php.net/manual/ja/funcref.php
+
 ### 組込関数
 PHPが標準で準備している関数(一部)
 #### 文字列(string)
@@ -30,3 +31,6 @@ https://www.php.net/manual/ja/book.math.php
 ### ユーザー定義関数
 開発者が自分で設定した関数　　
 https://www.php.net/manual/ja/functions.user-defined.php
+
+### 引数と型宣言
+https://www.php.net/manual/ja/functions.arguments.php
