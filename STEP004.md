@@ -29,7 +29,7 @@ https://www.php.net/manual/ja/refs.calendar.php
 https://www.php.net/manual/ja/book.math.php
 
 ### ユーザー定義関数
-開発者が自分で設定した関数　　
+開発者が自分で設定した関数  
 https://www.php.net/manual/ja/functions.user-defined.php
 
 ### 引数と型宣言
