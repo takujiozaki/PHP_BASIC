@@ -14,10 +14,11 @@ https://github.com/takujiozaki/PHP_BASIC/blob/main/STEP002.md
 ## STEP3
 https://github.com/takujiozaki/PHP_BASIC/blob/main/STEP003.md
 
-## 制作(じゃんけんゲーム)
 
 ## STEP04
 https://github.com/takujiozaki/PHP_BASIC/blob/main/STEP004.md
+
+## 制作作業
 
 ## セッション管理
 
