@@ -85,7 +85,19 @@ $forecast = "fine";
 <p>今日は雨です。</p>
 <?php } ?>
 ```
-
+マスタッシュ{}を使用しない例
+```
+<?php
+$forecast = "fine";
+?>
+<?php if($forecast == "fine"): ?>
+<p>今日は晴です。</p>
+<?php elseif($forecast == "cloud"): ?>
+<p>今日は曇りです。</p>
+<?php else: ?>
+<p>今日は雨です。</p>
+<?php endif ?>
+```
 
 ## 基本練習
 https://github.com/takujiozaki/PHP_BASIC/tree/main/SAMPLE02
