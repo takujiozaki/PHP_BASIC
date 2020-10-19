@@ -12,7 +12,15 @@ $scores = array(
     "science"  => 69,
 );
 var_dump($scores);
+//全件表示
+
+foreach($scores as $key => $value){
+    echo 'key ', $key , ' value ', $value;
+}
 ```
+
+### 多次元配列
+
 ## 関数
 https://www.php.net/manual/ja/funcref.php
 
