@@ -4,19 +4,22 @@
 ## PHP マニュアル
 https://www.php.net/manual/ja/index.php
 
-## STEP1
+## STEP001(変数とデータ型)
 https://github.com/takujiozaki/PHP_BASIC/blob/main/STEP001.md
 
-## STEP2
+## STEP002(演算子と条件分岐)
 https://github.com/takujiozaki/PHP_BASIC/blob/main/STEP002.md
 
 
-## STEP3
+## STEP003(繰り返しと配列)
 https://github.com/takujiozaki/PHP_BASIC/blob/main/STEP003.md
 
 
-## STEP04
+## STEP004(関数)
 https://github.com/takujiozaki/PHP_BASIC/blob/main/STEP004.md
+
+## STEP005(ジャンケンゲームVer.0)
+https://github.com/takujiozaki/PHP_BASIC/blob/main/STEP005.md
 
 ## 制作作業
 
