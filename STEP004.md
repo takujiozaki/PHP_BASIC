@@ -67,7 +67,49 @@ array_splice($bugs, 1, 2);
 ```
 https://www.php.net/manual/ja/book.array.php  
 #### 日付(date/time)
+```
+//Date関数　今日の日付を取得する
+$current_day = date("Y-m-d H:i:s");
+var_dump($current_day);
+
+//DateTime関数
+$now = new DateTime();
+var_dump($now->format('Y-m-d H:i:s'));
+//詳細はオブジェクト学習時に説明
+
+|  日付フォーマット  |  意味  |
+| ---- | ---- |
+|  Y  |  西暦の年(4桁)  |
+|  y  |  西暦の年(2桁)  |
+|  l  |  閏年なら1、以外は0  |
+| ---- | ---- |
+|  m  |  月(2桁)  |
+|  n  |  先頭にゼロを含まない月  |
+|  M  |  月の英語(略語)  |
+|  F  |  月の英語 |
+| ---- | ---- |
+|  d  |  日(2桁)  |
+|  j  |  先頭にゼロを含まない日  |
+|  t  |  その月の日数  |
+|  z  |  その年の経過日数 |
+| ---- | ---- |
+|  D  |  英語の曜日(略語)  |
+|  l  |  英語の曜日  |
+|  w  |  曜日（日曜が0）  |
+|  W  |  その年の経過週（月曜開始） |
+| ---- | ---- |
+|  H  |  時間(24時間)  |
+|  G  |  先頭にゼロを含まない時間(24時間)  |
+|  h  |  時間(12時間)  |
+|  g  |  先頭にゼロを含まない時間(12時間) |
+|  a  |  am or pm  |
+|  A  |  AM or PM |
+| ---- | ---- |
+|  i  |  分  |
+|  s  |  秒 |
+```
 https://www.php.net/manual/ja/function.date.php  
+https://www.php.net/manual/ja/datetime.formats.date.php  
 https://www.php.net/manual/ja/refs.calendar.php
 #### 数学(math)
 https://www.php.net/manual/ja/book.math.php
