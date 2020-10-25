@@ -76,7 +76,7 @@ var_dump($current_day);
 $now = new DateTime();
 var_dump($now->format('Y-m-d H:i:s'));
 //詳細はオブジェクト学習時に説明
-
+```
 |  日付フォーマット  |  意味  |
 | ---- | ---- |
 |  Y  |  西暦の年(4桁)  |
@@ -107,7 +107,6 @@ var_dump($now->format('Y-m-d H:i:s'));
 | ---- | ---- |
 |  i  |  分  |
 |  s  |  秒 |
-```
 https://www.php.net/manual/ja/function.date.php  
 https://www.php.net/manual/ja/datetime.formats.date.php  
 https://www.php.net/manual/ja/refs.calendar.php
