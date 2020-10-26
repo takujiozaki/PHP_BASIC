@@ -1,3 +1,23 @@
+<?php
+//var_dump($_POST);
+//誤ってGETでアクセスされたら最初の画面に送り返す
+if($_SERVER['REQUEST_METHOD'] == "GET"){
+    header("location: ./gamestart.html");
+    exit;
+}
+//POSTで送らて来た値はstringのためintに変換
+//整数に変換(int)キャストでもOK
+$myhand = intval($_POST["myselect"]);
+//コンピューターの手は乱数で生成
+$pchand = rand(0,2);
+
+//関数定義
+function showhand(int $hand):string{
+    $janken_array = array("グー","チョキ","パー");
+    return $janken_array[$hand];
+}
+
+?>
 <!doctype html>
 <html lang="ja">
   <head>
@@ -15,8 +35,8 @@
         <h1>ジャンケンゲームVer.0</h1>
         <div class="alert alert-primary" role="alert">
             <ul>
-                <li>あなたの手：</li>
-                <li>コンピューターの手：</li>
+                <li>あなたの手：<?=showhand($myhand)?></li>
+                <li>コンピューターの手：<?=showhand($pchand)?></li>
                 <li>勝敗：</li>
             </ul>
         </div>
