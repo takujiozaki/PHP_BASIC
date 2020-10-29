@@ -1,30 +1,3 @@
-<?php
-//var_dump($_POST);
-//誤ってGETでアクセスされたら最初の画面に送り返す
-if($_SERVER['REQUEST_METHOD'] == "GET"){
-    header("location: ./gamestart.html");
-    exit;
-}
-//POSTで送らて来た値はstringのためintに変換
-//整数に変換(int)キャストでもOK
-$myhand = intval($_POST["myselect"]);
-//コンピューターの手は乱数で生成
-$pchand = rand(0,2);
-
-//関数定義
-function showhand(int $hand):string{
-  $janken_array = array("グー","チョキ","パー");
-  return $janken_array[$hand];
-}
-
-function judge(int $player, int $computer):string{
-  //勝敗判定を行う
-  $result = ($player - $computer + 3) % 3;
-  $result_array = array("引き分け","負け","勝ち");
-  return $result_array[$result];
-}
-
-?>
 <!doctype html>
 <html lang="ja">
   <head>
@@ -35,19 +8,29 @@ function judge(int $player, int $computer):string{
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-    <title>ジャンケンゲームVer.0</title>
+    <title>PHP練習ファイル</title>
   </head>
   <body>
     <div class="container">
-        <h1>ジャンケンゲームVer.0</h1>
-        <div class="alert alert-primary" role="alert">
-            <ul>
-                <li>あなたの手：<?=showhand($myhand)?></li>
-                <li>コンピューターの手：<?=showhand($pchand)?></li>
-                <li>勝敗：<?=judge($myhand,$pchand)?></li>
-            </ul>
-        </div>
-        <p><a href="./game_start.html" class="btn btn-primary">もう一回勝負する</a></p>
+        <h1>登録</h1>
+        <p>リクエストを跨ぐデータの受け渡し</p>
+        <form action="comfirm.php" method="post">
+            <div>
+                <label for="name">氏名</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div>
+                <label for="age">年齢</label>
+                <input type="text" name="age" id="age">
+            </div>
+            <div>
+                <input type="radio" name="gender" id="male">
+                <label for="male">男性</label>
+                <input type="radio" name="gender" id="female">
+                <label for="female">女性</label>
+            </div>
+            <button type="submit" class="btn btn-primary">確認</button>
+        </form>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
