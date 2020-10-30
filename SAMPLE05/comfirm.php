@@ -3,7 +3,10 @@
 session_start();
 
 //request処理による分岐
-
+if($_SERVER['REQUEST_METHOD'] == "GET"){
+  header("location: ./signup.php");
+  exit;
+}
 //requestパラメーターの受け取り
 $name = htmlspecialchars($_POST['name'], ENT_QUOTES);
 $age = htmlspecialchars($_POST['age'], ENT_QUOTES);
