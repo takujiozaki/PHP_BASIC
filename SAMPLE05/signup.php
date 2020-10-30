@@ -62,6 +62,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
             </div>
             <button type="submit" class="btn btn-primary">確認</button>
         </form>
+        <p><a href="signup.php">最初から入力する</a></p>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
