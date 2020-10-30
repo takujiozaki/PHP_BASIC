@@ -46,9 +46,9 @@ if(isset($_SESSION['gender'])){
                 <input type="text" name="age" id="age" value="<?=$age?>">
             </div>
             <div>
-                <input type="radio" name="gender" id="male" value="男性">
+                <input type="radio" name="gender" id="male" value="男性" <?php if($gender == "男性") echo "checked" ?>>
                 <label for="male">男性</label>
-                <input type="radio" name="gender" id="female" value="女性">
+                <input type="radio" name="gender" id="female" value="女性" <?php if($gender == "女性") echo "checked" ?>>
                 <label for="female">女性</label>
             </div>
             <button type="submit" class="btn btn-primary">確認</button>
