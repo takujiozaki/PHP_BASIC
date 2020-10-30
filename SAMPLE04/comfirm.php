@@ -29,6 +29,9 @@ $gender = $_POST['gender'];
             <li class="list-group-item">性別：<?=$gender?></li>
         </ul>
         <form action="done.php" method="post">
+          <input type="hidden" name="name" value="<?=$name?>">
+          <input type="hidden" name="age" value="<?=$age?>">
+          <input type="hidden" name="gender" value="<?=$gender?>">
           <button type="submit" class="btn btn-primary mt-2">登録</button>
         </form>
     <!-- Optional JavaScript; choose one of the two! -->

@@ -1,3 +1,10 @@
+<?php
+  //requestパラメーターの受け取り
+  $name = $_POST['name'];
+  $age = $_POST['age'];
+  $gender = $_POST['gender'];
+
+?>
 <!doctype html>
 <html lang="ja">
   <head>
@@ -17,9 +24,9 @@
         <div class="alert alert-primary" role="alert">
             以下のデータを登録しました。
               <ul>
-                <li>名前:</li>
-                <li>年齢:</li>
-                <li>性別:</li>
+                <li>名前:<?=$name?></li>
+                <li>年齢:<?=$age?></li>
+                <li>性別:<?=$gender?></li>
               </ul>
         </div>
 
