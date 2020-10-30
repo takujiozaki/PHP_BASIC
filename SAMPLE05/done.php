@@ -5,6 +5,9 @@
   $age = $_SESSION['age'];
   $gender = $_SESSION['gender'];
 
+  //登録処理
+  //本来であればDBなどの登録処理を行う
+
   //セッション変数を削除
   unset($_SESSION['name']);
   unset($_SESSION['age']);
