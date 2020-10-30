@@ -1,22 +1,29 @@
 <?php
 session_start();
-$name = "";
-$age = "";
-$gender = "";
+//getでアクセス時は新規登録
+if($_SERVER['REQUEST_METHOD'] == "GET"){
+  //セッション変数を消去
+  unset($_SESSION['name']);
+  unset($_SESSION['age']);
+  unset($_SESSION['gender']);
+} else {
+  $name = "";
+  $age = "";
+  $gender = "";
 
-//復元
-if(isset($_SESSION['name'])){
-  $name = $_SESSION['name'];
+  //復元
+  if(isset($_SESSION['name'])){
+    $name = $_SESSION['name'];
+  }
+
+  if(isset($_SESSION['age'])){
+    $age = $_SESSION['age'];
+  }
+
+  if(isset($_SESSION['gender'])){
+    $gender = $_SESSION['gender'];
+  }
 }
-
-if(isset($_SESSION['age'])){
-  $age = $_SESSION['age'];
-}
-
-if(isset($_SESSION['gender'])){
-  $gender = $_SESSION['gender'];
-}
-
 
 ?>
 <!doctype html>
