@@ -29,6 +29,7 @@
 第一段階では　&lt;input type="hidden"&gt;　を使用しリクエストを跨ぐデータ処理を行う。(POST)  
 入力値は正しいものとしエラー制御(バリデーション)は考慮しない。  
 再入力のための戻るリンクは表示しない。  
+https://github.com/takujiozaki/PHP_BASIC/tree/main/SAMPLE04  
 
 ## リクエストを跨いだデータの受け渡し(2)
 ### 戻るリンクを考える
