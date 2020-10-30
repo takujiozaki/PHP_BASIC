@@ -1,3 +1,12 @@
+<?php
+//request処理による分岐
+
+//requestパラメーターの受け取り
+$name = $_POST['name'];
+$age = $_POST['age'];
+$gender = $_POST['gender'];
+
+?>
 <!doctype html>
 <html lang="ja">
   <head>
@@ -15,9 +24,9 @@
         <h1>確認</h1>
         <p>リクエストを跨ぐデータの受け渡し</p>
         <ul class="list-group">
-            <li class="list-group-item">名前：</li>
-            <li class="list-group-item">年齢：</li>
-            <li class="list-group-item">性別：</li>
+            <li class="list-group-item">名前：<?=$name?></li>
+            <li class="list-group-item">年齢：<?=$age?></li>
+            <li class="list-group-item">性別：<?=$gender?></li>
         </ul>
         <form action="done.php" method="post">
           <button type="submit" class="btn btn-primary mt-2">登録</button>
