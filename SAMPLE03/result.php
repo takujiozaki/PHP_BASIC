@@ -24,6 +24,22 @@ function judge(int $player, int $computer):string{
   return $result_array[$result];
 }
 
+//判定条件分岐を使うパターン
+function judge2(int $player, int $computer):string{
+  $result = ($player - $computer + 3) % 3;
+  $result_string = "";
+  switch($result){
+    case 0:
+      $result_string = "引き分け";
+      break;
+    case 1:
+      $result_string = "負け";
+      break;
+    default:
+      $result_string = "勝ち";
+  }
+    return $result_string;
+}
 ?>
 <!doctype html>
 <html lang="ja">
