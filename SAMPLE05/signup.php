@@ -1,3 +1,24 @@
+<?php
+session_start();
+$name = "";
+$age = "";
+$gender = "";
+
+//復元
+if(isset($_SESSION['name'])){
+  $name = $_SESSION['name'];
+}
+
+if(isset($_SESSION['age'])){
+  $age = $_SESSION['age'];
+}
+
+if(isset($_SESSION['gender'])){
+  $gender = $_SESSION['gender'];
+}
+
+
+?>
 <!doctype html>
 <html lang="ja">
   <head>
@@ -18,11 +39,11 @@
         <form action="comfirm.php" method="post">
             <div>
                 <label for="name">氏名</label>
-                <input type="text" name="name" id="name">
+                <input type="text" name="name" id="name" value="<?=$name?>">
             </div>
             <div>
                 <label for="age">年齢</label>
-                <input type="text" name="age" id="age">
+                <input type="text" name="age" id="age" value="<?=$age?>">
             </div>
             <div>
                 <input type="radio" name="gender" id="male" value="男性">

@@ -39,6 +39,10 @@ $_SESSION['gender'] = $gender;
         <form action="done.php" method="post">
           <button type="submit" class="btn btn-primary mt-2">登録</button>
         </form>
+        <form action="signup.php" method="post">
+          <button type="submit" class="btn btn-info mt-2">戻る</button>
+        </form>
+        
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
