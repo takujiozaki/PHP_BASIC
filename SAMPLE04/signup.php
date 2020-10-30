@@ -24,9 +24,9 @@
                 <input type="text" name="age" id="age">
             </div>
             <div>
-                <input type="radio" name="gender" id="male">
+                <input type="radio" name="gender" id="male" value="男性">
                 <label for="male">男性</label>
-                <input type="radio" name="gender" id="female">
+                <input type="radio" name="gender" id="female" value="女性">
                 <label for="female">女性</label>
             </div>
             <button type="submit" class="btn btn-primary">確認</button>
