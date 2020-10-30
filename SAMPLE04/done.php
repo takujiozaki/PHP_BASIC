@@ -15,7 +15,12 @@
         <h1>確認</h1>
         <p>リクエストを跨ぐデータの受け渡し</p>
         <div class="alert alert-primary" role="alert">
-            登録が完了しました。
+            以下のデータを登録しました。
+              <ul>
+                <li>名前:</li>
+                <li>年齢:</li>
+                <li>性別:</li>
+              </ul>
         </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
