@@ -21,11 +21,12 @@ https://github.com/takujiozaki/PHP_BASIC/blob/main/STEP004.md
 ## STEP005(ジャンケンゲームVer.0)
 https://github.com/takujiozaki/PHP_BASIC/blob/main/STEP005.md
 
-## 制作作業
-
 ## セッション管理
+リクエストを跨ぐデータの受け渡し  
+https://github.com/takujiozaki/PHP_BASIC/blob/main/STEP006.md
 
 ## クラスとオブジェクト
+https://github.com/takujiozaki/PHP_BASIC/blob/main/STEP007.md
 
 ## 構造体としてのオブジェクト
 
