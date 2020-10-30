@@ -5,6 +5,11 @@
   $age = $_SESSION['age'];
   $gender = $_SESSION['gender'];
 
+  //セッション変数を削除
+  unset($_SESSION['name']);
+  unset($_SESSION['age']);
+  unset($_SESSION['gender']);
+
 ?>
 <!doctype html>
 <html lang="ja">
