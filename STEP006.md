@@ -46,3 +46,7 @@ $_SESSION['gender'] = $gender;
 入力の修正のための戻るリンクを考える
 
 https://github.com/takujiozaki/PHP_BASIC/tree/main/SAMPLE05  
+
+## リクエストを跨いだデータの受け渡し(3)
+### 入力制御(バリデーション)
+https://github.com/takujiozaki/PHP_BASIC/tree/main/SAMPLE06   
