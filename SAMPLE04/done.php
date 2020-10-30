@@ -1,4 +1,9 @@
 <?php
+  //request処理による分岐
+  if($_SERVER['REQUEST_METHOD'] == "GET"){
+    header("location: ./signup.php");
+    exit;
+  }
   //requestパラメーターの受け取り
   $name = $_POST['name'];
   $age = $_POST['age'];
