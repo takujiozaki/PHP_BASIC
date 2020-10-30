@@ -11,6 +11,7 @@
     <title>PHP練習ファイル</title>
   </head>
   <body>
+  
     <div class="container">
         <h1>登録</h1>
         <p>リクエストを跨ぐデータの受け渡し</p>

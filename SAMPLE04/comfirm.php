@@ -2,8 +2,8 @@
 //request処理による分岐
 
 //requestパラメーターの受け取り
-$name = $_POST['name'];
-$age = $_POST['age'];
+$name = htmlspecialchars($_POST['name'], ENT_QUOTES);
+$age = htmlspecialchars($_POST['age'], ENT_QUOTES);
 $gender = $_POST['gender'];
 
 ?>
