@@ -13,6 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
   unset($_SESSION['name']);
   unset($_SESSION['age']);
   unset($_SESSION['gender']);
+  unset($_SESSION['error']);
 } else {
   //復元
   if(isset($_SESSION['name'])){
@@ -50,6 +51,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
     <div class="container">
         <h1>登録</h1>
         <p>リクエストを跨ぐデータの受け渡し</p>
+        <!--ERRORがあったら-->
         <?php if(!empty($error)): ?>
           <p class="alert alert-danger"><?=$error?></p>
         <?php endif ?>
