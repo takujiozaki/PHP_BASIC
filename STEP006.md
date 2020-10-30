@@ -43,8 +43,8 @@ $_SESSION['age'] = $age;
 $_SESSION['gender'] = $gender;
 ```
 ### 戻るリンクを考える
-入力の修正のための戻るリンクを考える
-
+入力の修正のための戻るリンクを考える  
+セッションとリクエストメソッドの組み合わせを考える  
 https://github.com/takujiozaki/PHP_BASIC/tree/main/SAMPLE05  
 
 ## リクエストを跨いだデータの受け渡し(3)
