@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+//formに埋め込む変数を準備
+$name = "";
+$age = "";
+$gender = "";
+
 //getでアクセス時は新規登録
 if($_SERVER['REQUEST_METHOD'] == "GET"){
   //セッション変数を消去
@@ -7,10 +13,6 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
   unset($_SESSION['age']);
   unset($_SESSION['gender']);
 } else {
-  $name = "";
-  $age = "";
-  $gender = "";
-
   //復元
   if(isset($_SESSION['name'])){
     $name = $_SESSION['name'];
