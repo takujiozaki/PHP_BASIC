@@ -62,7 +62,9 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
             </div>
             <button type="submit" class="btn btn-primary">確認</button>
         </form>
-        <p><a href="signup.php">最初から入力する</a></p>
+        <?php if(isset($_SESSION['name']) || isset($_SESSION['age']) || isset($_SESSION['gender'])): ?>
+        <p><a href="signup.php" class="btn btn-secondary mt-1">最初から入力する</a></p>
+        <?php endif ?>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
