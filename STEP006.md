@@ -32,5 +32,17 @@
 https://github.com/takujiozaki/PHP_BASIC/tree/main/SAMPLE04  
 
 ## リクエストを跨いだデータの受け渡し(2)
+### sessionの利用
+```
+//セッションスタート
+session_start();
+
+//sessionに登録
+$_SESSION['name'] = $name;
+$_SESSION['age'] = $age;
+$_SESSION['gender'] = $gender;
+```
 ### 戻るリンクを考える
 入力の修正のための戻るリンクを考える
+
+https://github.com/takujiozaki/PHP_BASIC/tree/main/SAMPLE05  
