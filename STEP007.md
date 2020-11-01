@@ -93,6 +93,7 @@ $assignment_datetime = $assignment->format('Y-m-d H:i:s');
 ### インスタンスとセッション
 セッション変数にインスタンスを格納する時はserialize()関数を用いる  
 セッション変数からインスタンスを取得する時はunserialize()関数を用いる  
+https://github.com/takujiozaki/PHP_BASIC/tree/main/SAMPLE09   
 
 ## 継承
 ### オーバーライド
