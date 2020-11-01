@@ -54,6 +54,12 @@ https://github.com/takujiozaki/PHP_BASIC/tree/main/SAMPLE08
 ### コンストラクタ
 インスタンス化される時(new)一度だけ呼び出されるメソッド。  
 インスタンスの初期設定に利用される。  
+```
+public funtion __construct(){
+    //インスタンス化する時に必要な処理
+    //主に初期データの投入などに使用
+}
+```
 
 ### $this
 オブジェクト自身への参照には$thisが使用される
