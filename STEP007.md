@@ -19,7 +19,8 @@ $student_array = [
 ];
 ```
 *問題点：連想配列は構造が保証されていない。  
-'livein'がない列なども自由に作れてしまう。
+'livein'がない列なども自由に作れてしまう。  
+https://github.com/takujiozaki/PHP_BASIC/tree/main/SAMPLE07   
 ### 構造体としてのオブジェクト
 ```
 //オブジェクト化する
@@ -43,6 +44,8 @@ $s1 = new Student();
 |  public  |  クラスの外部から参照、呼び出しが可能  |
 |  private  |  所属するクラスの内部からのみ参照、呼び出しが可能  |
 |  protected  |  所属するクラスの内部、または所属クラスを継承したクラスの内側からのみ参照、呼び出しが可能  |
+
+https://github.com/takujiozaki/PHP_BASIC/tree/main/SAMPLE08   
 
 ### メソッドとコンストラクタ
 #### メソッド
