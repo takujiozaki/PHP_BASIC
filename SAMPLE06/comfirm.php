@@ -20,7 +20,8 @@ $_SESSION['gender'] = $gender;
 //validation
 if(!is_numeric($age)){
   $_SESSION['error'] = "年齢は数字である必要があります";
-  header('Location: signup.php', true, 307);
+  header('Location: signup.php', true, 307);//POSTでリダイレクト
+  exit()
 }
 
 ?>
