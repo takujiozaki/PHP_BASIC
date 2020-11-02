@@ -8,22 +8,23 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-    <title>連想配列とセッションで作る掲示板</title>
+    <title>連想配列とセッションで作るメモ</title>
   </head>
   <body>
     <div class="container">
-    <h1>連想配列とセッションで作る掲示板</h1>
+    <h1>連想配列とセッションで作るメモ</h1>
+    <p>セッションを使っているので自分専用です！</p>
     <form action="#" method="post">
-        <label for="input_name">登録者</label>
-        <input type="text" name="name" id="input_name">
-        <label for="input_body">メッセージ</label>
+        <label for="input_subject">科目</label>
+        <input type="text" name="subject" id="input_subject">
+        <label for="input_body">内容</label>
         <input type="text" name="body" id="input_body">
         <button type="submit" class="btn btn-primary">投稿</button>
     </form>
     <table class="table mt-2">
         <tr>
             <th>#</th>
-            <th>名前</th>
+            <th>科目</th>
             <th>内容</th>
         </tr>
         <tr>
