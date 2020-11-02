@@ -18,8 +18,9 @@
         <input type="text" name="name" id="input_name">
         <label for="input_body">メッセージ</label>
         <input type="text" name="body" id="input_body">
+        <button type="submit" class="btn btn-primary">投稿</button>
     </form>
-    <table class="table">
+    <table class="table mt-2">
         <tr>
             <th>#</th>
             <th>名前</th>
