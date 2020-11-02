@@ -31,6 +31,9 @@
 再入力のための戻るリンクは表示しない。  
 https://github.com/takujiozaki/PHP_BASIC/tree/main/SAMPLE04  
 
+### htmlspecialchars関数
+スクリプトインサーション、クロスサイトスクリプティングについて確認  
+
 ## リクエストを跨いだデータの受け渡し(2)
 ### sessionの利用
 ```
