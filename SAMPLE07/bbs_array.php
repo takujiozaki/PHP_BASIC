@@ -34,11 +34,13 @@ $boards = [
             <th>科目</th>
             <th>内容</th>
         </tr>
+        <?php foreach($boards as $board):?>
         <tr>
             <td></td>
-            <td></td>
-            <td></td>
+            <td><?=$board['subject']?></td>
+            <td><?=$board['body']?></td>
         </tr>
+        <?php endforeach ?>
     </table>
     </div>
     
