@@ -1,3 +1,10 @@
+<?php
+//表示用の連想配列を作成(サンプル)
+$boards = [
+  ['subject'=>"ネットワーク", 'body'=>"DNSの設定"],
+  ['subject'=>"プログラム", 'body'=>"PHP セッションの復讐"],
+];
+?>
 <!doctype html>
 <html lang="ja">
   <head>
