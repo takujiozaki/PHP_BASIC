@@ -18,6 +18,7 @@ $boards = $_SESSION['boards'];
 //POST処理
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
+<<<<<<< HEAD
   if(isset($_POST['reset']) || $_POST['reset'] == "1"){
     unset($_SESSION['boards']);
   }else{
@@ -35,6 +36,19 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
   }
   //リダイレクト、リクエストをGETに切り替える
+=======
+  $count = count($boards) + 1;
+  $subject = $_POST['subject'];
+  $body = $_POST['body'];
+  $new_board = array(
+    'num' => $count,
+    'subject' => $subject,
+    'body' => $body,
+  );
+  array_push($boards, $new_board);
+  //セッションに登録
+  $_SESSION['boards'] = $boards;
+>>>>>>> 1dffbad54414d73c7b8b5560b586884ed7956a2f
   header('location:'.$_SERVER['SCRIPT_NAME']);
   exit();
 }
