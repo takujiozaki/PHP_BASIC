@@ -26,6 +26,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
   array_push($boards, $new_board);
   //セッションに登録
   $_SESSION['boards'] = $boards;
+  header('location:'.$_SERVER['SCRIPT_NAME']);
+  exit();
 }
 
 ?>
