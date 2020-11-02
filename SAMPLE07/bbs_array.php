@@ -19,11 +19,15 @@ $boards = $_SESSION['boards'];
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
   //データのリセット
-  if(isset($_POST['pass']) && $_POST['pass'] == '1234'){
+  if(isset($_POST['pass'])){
+    if($_POST['pass'] == '1234'){
       unset($_SESSION['boards']);
-  }
+    }else{
+      $_SESSION['error'] = "パスワードが空欄か誤っています";
+    }
+  } 
   //投稿データの送信
-  if(isset($_POST['subject']) || isset($_POST['body'])){
+  if(isset($_POST['subject']) && isset($_POST['body'])){
     $count = count($boards) + 1;
     $subject = $_POST['subject'];
     $body = $_POST['body'];
@@ -41,6 +45,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
   exit();
 }
 
+//errorメッセージを取得
+if(isset($_SESSION['error'])){
+  $error = $_SESSION['error'];
+  unset($_SESSION['error']);
+}
 ?>
 <!doctype html>
 <html lang="ja">
@@ -58,6 +67,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     <div class="container">
     <h1>連想配列とセッションで作るメモ</h1>
     <p>セッションを使っているので自分専用です！</p>
+    <?php if(!empty($error)): ?>
+      <p class="alert alert-danger"><?=$error?></p>
+    <?php endif ?>
     <form action="#" method="post">
         <label for="input_subject">科目</label>
         <input type="text" name="subject" id="input_subject">
