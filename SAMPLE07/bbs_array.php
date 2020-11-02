@@ -12,23 +12,28 @@ if(!isset($_SESSION['boards'])){
   $_SESSION['boards'] = $boards;
   
 }
-
+//sessionから情報を取得
 $boards = $_SESSION['boards'];
 
 //POST処理
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
-  $count = count($boards) + 1;
-  $subject = $_POST['subject'];
-  $body = $_POST['body'];
-  $new_board = array(
-    'num' => $count,
-    'subject' => $subject,
-    'body' => $body,
-  );
-  array_push($boards, $new_board);
-  //セッションに登録
-  $_SESSION['boards'] = $boards;
+  if(isset($_POST['reset']) || $_POST['reset'] == "1"){
+    unset($_SESSION['boards']);
+  }else{
+    $count = count($boards) + 1;
+    $subject = $_POST['subject'];
+    $body = $_POST['body'];
+    $new_board = array(
+      'num' => $count,
+      'subject' => $subject,
+      'body' => $body,
+    );
+    array_push($boards, $new_board);
+    //セッションに登録
+    $_SESSION['boards'] = $boards;
+
+  }
   //リダイレクト、リクエストをGETに切り替える
   header('location:'.$_SERVER['SCRIPT_NAME']);
   exit();
@@ -72,8 +77,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         </tr>
         <?php endforeach ?>
     </table>
+    <div>
+      <form action="#" method="post">
+        <input type="hidden" name="reset" value="1">
+        <button type="submit" class="btn btn-danger">データをリセット</button>
+      </form>
     </div>
-    
+    </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
