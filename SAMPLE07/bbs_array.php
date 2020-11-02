@@ -5,22 +5,25 @@ session_start();
 if(!isset($_SESSION['boards'])){
   //表示用の連想配列を作成(サンプル)
   $boards = [
-    ['subject'=>"ネットワーク", 'body'=>"DNSの設定"],
-    ['subject'=>"プログラム", 'body'=>"PHP セッションの復讐"],
+    //['subject'=>"ネットワーク", 'body'=>"DNSの設定"],
+    //['subject'=>"プログラム", 'body'=>"PHP セッションの復讐"],
   ];
   //セッションに登録
   $_SESSION['boards'] = $boards;
-  
 }
+
 //sessionから情報を取得
 $boards = $_SESSION['boards'];
 
 //POST処理
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
-  if(isset($_POST['reset']) || $_POST['reset'] == "1"){
-    unset($_SESSION['boards']);
-  }else{
+  //データのリセット
+  if(isset($_POST['pass']) && $_POST['pass'] == '1234'){
+      unset($_SESSION['boards']);
+  }
+  //データの送信
+  if(isset($_POST['subject']) || isset($_POST['body'])){
     $count = count($boards) + 1;
     $subject = $_POST['subject'];
     $body = $_POST['body'];
@@ -32,7 +35,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     array_push($boards, $new_board);
     //セッションに登録
     $_SESSION['boards'] = $boards;
-
   }
   //リダイレクト、リクエストをGETに切り替える
   header('location:'.$_SERVER['SCRIPT_NAME']);
@@ -79,7 +81,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     </table>
     <div>
       <form action="#" method="post">
-        <input type="hidden" name="reset" value="1">
+        <input type="password" name="pass">
         <button type="submit" class="btn btn-danger">データをリセット</button>
       </form>
     </div>
