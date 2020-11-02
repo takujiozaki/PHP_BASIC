@@ -14,6 +14,19 @@ if(!isset($_SESSION['boards'])){
 
 $boards = $_SESSION['boards'];
 
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+  $count = count($boards) + 1;
+  $subject = $_POST['subject'];
+  $body = $_POST['body'];
+  $new_board = array(
+    'num' => $count,
+    'subject' => $subject,
+    'body' => $body,
+  );
+  array_push($boards, $new_board);
+  //セッションに登録
+  $_SESSION['boards'] = $boards;
+}
 
 ?>
 <!doctype html>
