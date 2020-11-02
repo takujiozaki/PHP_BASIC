@@ -62,7 +62,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
             </div>
             <div>
                 <label for="age">年齢</label>
-                <input type="text" name="age" id="age" value="<?=$age?>">
+                <input type="number" name="age" id="age" min="0" value="<?=$age?>">
             </div>
             <div>
                 <input type="radio" name="gender" id="male" value="男性" <?php if($gender == "男性") echo "checked" ?>>
