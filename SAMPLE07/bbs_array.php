@@ -10,9 +10,12 @@ if(!isset($_SESSION['boards'])){
   ];
   //セッションに登録
   $_SESSION['boards'] = $boards;
+  
 }
 
 $boards = $_SESSION['boards'];
+
+//POST処理
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
   $count = count($boards) + 1;
@@ -26,6 +29,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
   array_push($boards, $new_board);
   //セッションに登録
   $_SESSION['boards'] = $boards;
+  //リダイレクト、リクエストをGETに切り替える
+  header('location:'.$_SERVER['SCRIPT_NAME']);
+  exit();
 }
 
 ?>
@@ -60,7 +66,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         </tr>
         <?php foreach($boards as $board):?>
         <tr>
-            <td></td>
+            <td><?=$board['num']?></td>
             <td><?=$board['subject']?></td>
             <td><?=$board['body']?></td>
         </tr>
