@@ -1,9 +1,20 @@
 <?php
-//表示用の連想配列を作成(サンプル)
-$boards = [
-  ['subject'=>"ネットワーク", 'body'=>"DNSの設定"],
-  ['subject'=>"プログラム", 'body'=>"PHP セッションの復讐"],
-];
+
+session_start();
+//セッションに連想配列がなかったら
+if(!isset($_SESSION['boards'])){
+  //表示用の連想配列を作成(サンプル)
+  $boards = [
+    ['subject'=>"ネットワーク", 'body'=>"DNSの設定"],
+    ['subject'=>"プログラム", 'body'=>"PHP セッションの復讐"],
+  ];
+  //セッションに登録
+  $_SESSION['boards'] = $boards;
+}
+
+$boards = $_SESSION['boards'];
+
+
 ?>
 <!doctype html>
 <html lang="ja">
