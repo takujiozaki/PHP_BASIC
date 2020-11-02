@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
   if(isset($_POST['pass']) && $_POST['pass'] == '1234'){
       unset($_SESSION['boards']);
   }
-  //データの送信
+  //投稿データの送信
   if(isset($_POST['subject']) || isset($_POST['body'])){
     $count = count($boards) + 1;
     $subject = $_POST['subject'];
