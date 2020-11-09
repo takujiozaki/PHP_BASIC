@@ -49,11 +49,11 @@ if($price % $persons != 0){//割り切れない
     <div class="container">
     <h1>割り勘計算機(結果)</h1>
     <ul class="list-group">
-      <li class="list-group-item">合計金額：<?=$price?>円</li>
-      <li class="list-group-item">人数：<?=$persons?>人</li>
-      <li class="list-group-item">一人当たり：<?=$result?>円</li>
+      <li class="list-group-item">合計金額：<?=number_format($price)?>円</li>
+      <li class="list-group-item">人数：<?=number_format($persons)?>人</li>
+      <li class="list-group-item">一人当たり：<?=number_format($result)?>円</li>
       <?php if($amari > 0):?>
-      <li class="list-group-item">余り：<?=$amari?>円</li>
+      <li class="list-group-item">余り：<?=number_format($amari)?>円</li>
       <?php endif; ?>
     </ul>
     <a href="input.php" class="btn btn-info">戻る</a>
