@@ -1,7 +1,11 @@
 <?php
 //入力値の取得
-$total_price = htmlspecialchars($_POST['price']);
-$persons = htmlspecialchars($_POST['persons']);
+$price = htmlspecialchars($_POST['price']);//合計
+$persons = htmlspecialchars($_POST['persons']);//人数
+
+//入力値の検査(数字かどうか)
+
+$result = $price / $persons;//計算値
 
 ?>
 <!doctype html>
@@ -22,7 +26,7 @@ $persons = htmlspecialchars($_POST['persons']);
     <ul class="list-group">
       <li class="list-group-item">合計金額：<?=$price?></li>
       <li class="list-group-item">人数：<?=$persons?></li>
-      <li class="list-group-item">一人当たり：</li>
+      <li class="list-group-item">一人当たり：<?=$result?></li>
     </ul>
     <a href="input.php" class="btn btn-info">戻る</a>
     </div>
