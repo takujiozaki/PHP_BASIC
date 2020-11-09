@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+require_once('functions.php');
 $price = '';
 $persons = '';
 $error_msg = array();
@@ -11,11 +11,6 @@ if(isset($_SESSION['error_msg']) && count($_SESSION['error_msg'])>0){
   $persons = $_SESSION['persons'];
   //消去
   clear_session(['error_msg','price','persons']);
-}
-function clear_session(array $session_elements):void{
-  foreach($session_elements as $session_element){
-    unset($_SESSION[$session_element]);
-  }
 }
 ?>
 <!doctype html>

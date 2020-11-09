@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once('functions.php');
 //POST以外でアクセスされたら
 if($_SERVER['REQUEST_METHOD'] != "POST"){
   //入力画面に戻す
@@ -23,29 +24,6 @@ if($price % $persons != 0){//割り切れない
 }else{
   $result = $price / $persons;
 }
-
-function check_numeric(string $price, string $persons):void{
-  $error_msg = array();
-  //入力値が数字でなければ
-  if(!is_numeric($price) || !is_numeric($persons)){
-    $error_msg[] = "数字が入力されていません";
-  }
-  //人数が数字でゼロであれば
-  if(is_numeric($persons) && $persons <= 0){
-    $error_msg[] = "人数にゼロが入力されています";
-  }
-  //エラーがあった時
-  if(count($error_msg)>0){
-    $_SESSION['error_msg'] = $error_msg;
-    $_SESSION['price'] = $price;
-    $_SESSION['persons'] = $persons;
-    //入力画面に戻す
-    header('location:./input.php');
-    exit();
-  }
-}
-
-
 ?>
 <!doctype html>
 <html lang="ja">

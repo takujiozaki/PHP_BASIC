@@ -140,5 +140,12 @@ function clear_session(array $session_elements):void{
 }
 ```
 
+### 関数を外部ファイル化する
+関数を別ファイル化(functions.php)
+```
+//関数ファイルを読み込む
+require_once('functions.php');
+```
+
 ## 制作例
 https://github.com/takujiozaki/PHP_BASIC/tree/main/BREAK001
