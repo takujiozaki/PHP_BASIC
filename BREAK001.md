@@ -18,5 +18,29 @@
 画面2から画面1へ  
 画面遷移を完成させる
 
+### 手順３ 入力値の取得
+合計金額、人数を取得
+連想配列$_POSTから値を取得  
+
+例
+```
+合計：<input type="text" name="price">
+人数：<input type="text" name="person">
+```
+の場合
+```
+$price = $_POST['price'];//合計
+$person = $_POST['person'];//人数
+```
+の様に取得します。
+
+入力値にはhtmlspecialchars関数を適用。    
+スクリプトインサーション、XSS対策  
+下記の例を入力してみてください。
+```
+<script>alert('hello');</script>
+<script>window.location.href = 'https://www.yahoo.co.jp';</script>
+```
+
 ## 制作例
 https://github.com/takujiozaki/PHP_BASIC/tree/main/BREAK001
