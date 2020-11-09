@@ -3,15 +3,15 @@ session_start();
 
 $price = '';
 $persons = '';
-$error_msg = "";
+$error_msg = array();
 
 if(isset($_SESSION['error_flg']) && $_SESSION['error_flg']){
-  $error_msg = $_SESSION['error'];
+  $error_msg = $_SESSION['error_msg'];
   $price = $_SESSION['price'];
   $persons = $_SESSION['persons'];
   //消去
   unset($_SESSION['error_flg']);
-  unset($_SESSION['error']);
+  unset($_SESSION['error_msg']);
   unset($_SESSION['price']);
   unset($_SESSION['persons']);
 }
@@ -32,9 +32,14 @@ if(isset($_SESSION['error_flg']) && $_SESSION['error_flg']){
   <body>
     <div class="container">
     <h1>割り勘計算機</h1>
-    <?php if($error_msg!=""):?>
+    <?php if(count($error_msg)):?>
     <div class="alert alert-danger">
-      <?=$error_msg?>
+      <ul>
+        <?php foreach($error_msg as $error):?>
+        <li><?=$error?></li>
+        <?php endforeach; ?>
+      </ul>
+      
     </div>
     <?php endif;?>
     <form action="result.php" method="post">

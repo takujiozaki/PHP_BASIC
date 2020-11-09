@@ -105,5 +105,33 @@ if($persons <= 0){
 }
 ```
 
+### 処理を関数にまとめる
+```
+function check_numeric(string $price, string $persons):void{
+  $error_flg = false;
+  $error_msg = array();
+  //入力値が数字でなければ
+  if(!is_numeric($price) || !is_numeric($persons)){
+    $error_flg = true;
+    $error_msg[] = "数字が入力されていません";
+  }
+  //人数が数字でゼロであれば
+  if(is_numeric($persons) && $persons <= 0){
+    $error_flg = true;
+    $error_msg[] = "人数にゼロが入力されています";
+  }
+  //エラーがあった時
+  if($error_flg){
+    $_SESSION['error_flg'] = $error_flg;
+    $_SESSION['error_msg'] = $error_msg;
+    $_SESSION['price'] = $price;
+    $_SESSION['persons'] = $persons;
+    //入力画面に戻す
+    header('location:./input.php');
+    exit();
+  }
+}
+```
+
 ## 制作例
 https://github.com/takujiozaki/PHP_BASIC/tree/main/BREAK001

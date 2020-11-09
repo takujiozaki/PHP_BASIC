@@ -13,25 +13,8 @@ $persons = htmlspecialchars($_POST['persons']);//人数
 $result = 0;//一人当たりの金額
 $amari = 0;//余り
 
-//入力値の検査(数字かどうか)
-if(!is_numeric($price) || !is_numeric($persons)){
-  $_SESSION['error_flg'] = true;
-  $_SESSION['error'] = "数字が入力されていません";
-  $_SESSION['price'] = $price;
-  $_SESSION['persons'] = $persons;
-  //入力画面に戻す
-  header('location:./input.php');
-  exit();
-}
-if($persons <= 0){
-  $_SESSION['error_flg'] = true;
-  $_SESSION['error'] = "人数がゼロまたは負の数です。";
-  $_SESSION['price'] = $price;
-  $_SESSION['persons'] = $persons;
-  //入力画面に戻す
-  header('location:./input.php');
-  exit();
-}
+//入力値の検査
+check_numeric($price,$persons);
 
 //割り切れたかどうか
 if($price % $persons != 0){//割り切れない
@@ -40,6 +23,32 @@ if($price % $persons != 0){//割り切れない
 }else{
   $result = $price / $persons;
 }
+
+function check_numeric(string $price, string $persons):void{
+  $error_flg = false;
+  $error_msg = array();
+  //入力値が数字でなければ
+  if(!is_numeric($price) || !is_numeric($persons)){
+    $error_flg = true;
+    $error_msg[] = "数字が入力されていません";
+  }
+  //人数が数字でゼロであれば
+  if(is_numeric($persons) && $persons <= 0){
+    $error_flg = true;
+    $error_msg[] = "人数にゼロが入力されています";
+  }
+  //エラーがあった時
+  if($error_flg){
+    $_SESSION['error_flg'] = $error_flg;
+    $_SESSION['error_msg'] = $error_msg;
+    $_SESSION['price'] = $price;
+    $_SESSION['persons'] = $persons;
+    //入力画面に戻す
+    header('location:./input.php');
+    exit();
+  }
+}
+
 
 ?>
 <!doctype html>
