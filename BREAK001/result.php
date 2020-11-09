@@ -1,3 +1,9 @@
+<?php
+//入力値の取得
+$total_price = htmlspecialchars($_POST['price']);
+$persons = htmlspecialchars($_POST['persons']);
+
+?>
 <!doctype html>
 <html lang="ja">
   <head>
@@ -14,8 +20,8 @@
     <div class="container">
     <h1>割り勘計算機(結果)</h1>
     <ul class="list-group">
-      <li class="list-group-item">合計金額：</li>
-      <li class="list-group-item">人数：</li>
+      <li class="list-group-item">合計金額：<?=$price?></li>
+      <li class="list-group-item">人数：<?=$persons?></li>
       <li class="list-group-item">一人当たり：</li>
     </ul>
     <a href="input.php" class="btn btn-info">戻る</a>

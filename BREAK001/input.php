@@ -15,8 +15,8 @@
     <h1>割り勘計算機</h1>
     <form action="result.php" method="post">
       <div>
-        <label for="total_price">合計金額</label>
-        <input type="text" name="total_price" id="total_price">
+        <label for="price">合計金額</label>
+        <input type="text" name="price" id="price">
       </div>
       <div>
         <label for="persons">人数</label>
