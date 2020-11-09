@@ -42,5 +42,19 @@ $person = $_POST['person'];//人数
 <script>window.location.href = 'https://www.yahoo.co.jp';</script>
 ```
 
+### 計算結果の表示
+一人当たりの金額は 合計 / 人数　です。  
+```
+$result = $price / $person;
+```
+計算して画面に埋め込んでみましょう。 
+数値によっては少数が出る場合がありますが後で対処します。
+```
+一人当たりの金額:<?=$result?>
+```
+### 割り切れなかった時の対応
+
+### 数字でなかった時の対応
+
 ## 制作例
 https://github.com/takujiozaki/PHP_BASIC/tree/main/BREAK001
