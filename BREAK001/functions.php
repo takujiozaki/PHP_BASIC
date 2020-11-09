@@ -23,7 +23,7 @@ function check_numeric(string $price, string $persons):void{
 
 //セッションの消去
 function clear_session(array $session_elements):void{
-    foreach($session_elements as $session_element){
-      unset($_SESSION[$session_element]);
-    }
+  foreach($session_elements as $session_element){
+    unset($_SESSION[$session_element]);
   }
+}
