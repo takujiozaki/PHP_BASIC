@@ -1,3 +1,22 @@
+<?php
+session_start();
+
+$price = '';
+$persons = '';
+$error_msg = "";
+
+if(isset($_SESSION['error_flg']) && $_SESSION['error_flg']){
+  $error_msg = $_SESSION['error'];
+  $price = $_SESSION['price'];
+  $persons = $_SESSION['persons'];
+  //消去
+  unset($_SESSION['error_flg']);
+  unset($_SESSION['error']);
+  unset($_SESSION['price']);
+  unset($_SESSION['persons']);
+}
+
+?>
 <!doctype html>
 <html lang="ja">
   <head>
@@ -13,14 +32,19 @@
   <body>
     <div class="container">
     <h1>割り勘計算機</h1>
+    <?php if($error_msg!=""):?>
+    <div class="alert alert-danger">
+      <?=$error_msg?>
+    </div>
+    <?php endif;?>
     <form action="result.php" method="post">
       <div>
         <label for="price">合計金額</label>
-        <input type="text" name="price" id="price">
+        <input type="text" name="price" id="price" value="<?=$price?>">
       </div>
       <div>
         <label for="persons">人数</label>
-        <input type="text" name="persons" id="persons">
+        <input type="text" name="persons" id="persons" value="<?=$persons?>">
       </div>
       <button type="submit" class="btn btn-primary">計算</button>
     </form>

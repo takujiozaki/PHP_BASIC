@@ -1,5 +1,11 @@
 <?php
+session_start();
 //POST以外でアクセスされたら
+if($_SERVER['REQUEST_METHOD'] != "POST"){
+  //入力画面に戻す
+  header('location:./input.php');
+  exit();
+}
 
 //入力値の取得
 $price = htmlspecialchars($_POST['price']);//合計
@@ -8,6 +14,15 @@ $result = 0;//一人当たりの金額
 $amari = 0;//余り
 
 //入力値の検査(数字かどうか)
+if(!is_numeric($price) || !is_numeric($persons)){
+  $_SESSION['error_flg'] = true;
+  $_SESSION['error'] = "数字が入力されていません";
+  $_SESSION['price'] = $price;
+  $_SESSION['persons'] = $persons;
+  //入力画面に戻す
+  header('location:./input.php');
+  exit();
+}
 
 //割り切れたかどうか
 if($price % $persons != 0){//割り切れない
@@ -16,7 +31,6 @@ if($price % $persons != 0){//割り切れない
 }else{
   $result = $price / $persons;
 }
-
 
 ?>
 <!doctype html>

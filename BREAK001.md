@@ -53,7 +53,6 @@ $result = $price / $person;
 一人当たりの金額:<?=$result?>
 ```
 ### 割り切れなかった時の対応
-割り切れなかった時の対応<考え方>  
 割り切れたかどうかを確認する  
 割り切れなかった場合  
 - 一人当たりの金額：小数点以下を切り上げる
@@ -63,6 +62,32 @@ $result = $price / $person;
 - そのまま表示
 
 ### 数字でなかった時の対応
+```
+//result.php
+//入力値の検査(数字かどうか)
+if(!is_numeric($price) || !is_numeric($persons)){
+  $_SESSION['error_flg'] = true;
+  $_SESSION['error'] = "数字が入力されていません";
+  $_SESSION['price'] = $price;
+  $_SESSION['persons'] = $persons;
+  //入力画面に戻す
+  header('location:./input.php');
+  exit();
+}
+```
+```
+//input.php
+if(isset($_SESSION['error_flg']) && $_SESSION['error_flg']){
+  $error_msg = $_SESSION['error'];
+  $price = $_SESSION['price'];
+  $persons = $_SESSION['persons'];
+  //消去
+  unset($_SESSION['error_flg']);
+  unset($_SESSION['error']);
+  unset($_SESSION['price']);
+  unset($_SESSION['persons']);
+}
+```
 
 ## 制作例
 https://github.com/takujiozaki/PHP_BASIC/tree/main/BREAK001
