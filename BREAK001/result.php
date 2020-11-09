@@ -23,6 +23,15 @@ if(!is_numeric($price) || !is_numeric($persons)){
   header('location:./input.php');
   exit();
 }
+if($persons <= 0){
+  $_SESSION['error_flg'] = true;
+  $_SESSION['error'] = "人数がゼロまたは負の数です。";
+  $_SESSION['price'] = $price;
+  $_SESSION['persons'] = $persons;
+  //入力画面に戻す
+  header('location:./input.php');
+  exit();
+}
 
 //割り切れたかどうか
 if($price % $persons != 0){//割り切れない
