@@ -64,10 +64,6 @@ number_format()関数
 割り切れた場合
 - そのまま表示
 
-人数がゼロの対応  
-- ゼロの割り算ではエラーがでるため人数は1以上の値が必要
-
-
 ### 数字でなかった時の対応
 ```
 //result.php
@@ -93,6 +89,19 @@ if(isset($_SESSION['error_flg']) && $_SESSION['error_flg']){
   unset($_SESSION['error']);
   unset($_SESSION['price']);
   unset($_SESSION['persons']);
+}
+```
+### 人数がゼロの対応
+ゼロの割り算ではエラーがでるため人数は1以上の値が必要
+```
+if($persons <= 0){
+  $_SESSION['error_flg'] = true;
+  $_SESSION['error'] = "人数がゼロまたは負の数です。";
+  $_SESSION['price'] = $price;
+  $_SESSION['persons'] = $persons;
+  //入力画面に戻す
+  header('location:./input.php');
+  exit();
 }
 ```
 
