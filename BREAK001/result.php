@@ -1,11 +1,22 @@
 <?php
+//POST以外でアクセスされたら
+
 //入力値の取得
 $price = htmlspecialchars($_POST['price']);//合計
 $persons = htmlspecialchars($_POST['persons']);//人数
+$result = 0;//一人当たりの金額
+$amari = 0;//余り
 
 //入力値の検査(数字かどうか)
 
-$result = $price / $persons;//計算値
+//割り切れたかどうか
+if($price % $persons != 0){//割り切れない
+  $result = ceil($price / $persons);
+  $amari = $result * $persons - $price;
+}else{
+  $result = $price / $persons;
+}
+
 
 ?>
 <!doctype html>
@@ -24,9 +35,12 @@ $result = $price / $persons;//計算値
     <div class="container">
     <h1>割り勘計算機(結果)</h1>
     <ul class="list-group">
-      <li class="list-group-item">合計金額：<?=$price?></li>
-      <li class="list-group-item">人数：<?=$persons?></li>
-      <li class="list-group-item">一人当たり：<?=$result?></li>
+      <li class="list-group-item">合計金額：<?=$price?>円</li>
+      <li class="list-group-item">人数：<?=$persons?>人</li>
+      <li class="list-group-item">一人当たり：<?=$result?>円</li>
+      <?php if($amari > 0):?>
+      <li class="list-group-item">余り：<?=$amari?>円</li>
+      <?php endif; ?>
     </ul>
     <a href="input.php" class="btn btn-info">戻る</a>
     </div>
