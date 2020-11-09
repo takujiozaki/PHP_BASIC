@@ -106,7 +106,7 @@ if($persons <= 0){
 ```
 
 ### 処理を関数にまとめる
-error_flgを省略し、error_msgの件数で判断する
+error_flgを省略し、error_msgの件数で判断する(result.php)
 ```
 function check_numeric(string $price, string $persons):void{
   $error_msg = array();
@@ -126,6 +126,16 @@ function check_numeric(string $price, string $persons):void{
     //入力画面に戻す
     header('location:./input.php');
     exit();
+  }
+}
+```
+input.phpにて複数回繰り返されるセッション編集除去を関数化する
+```
+clear_session(['error_msg','price','persons']);
+
+function clear_session(array $session_elements):void{
+  foreach($session_elements as $session_element){
+    unset($_SESSION[$session_element]);
   }
 }
 ```

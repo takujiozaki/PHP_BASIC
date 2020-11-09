@@ -10,11 +10,13 @@ if(isset($_SESSION['error_msg']) && count($_SESSION['error_msg'])>0){
   $price = $_SESSION['price'];
   $persons = $_SESSION['persons'];
   //消去
-  unset($_SESSION['error_msg']);
-  unset($_SESSION['price']);
-  unset($_SESSION['persons']);
+  clear_session(['error_msg','price','persons']);
 }
-
+function clear_session(array $session_elements):void{
+  foreach($session_elements as $session_element){
+    unset($_SESSION[$session_element]);
+  }
+}
 ?>
 <!doctype html>
 <html lang="ja">
