@@ -149,3 +149,9 @@ require_once('functions.php');
 
 ## 制作例
 https://github.com/takujiozaki/PHP_BASIC/tree/main/BREAK001
+
+### オプション計算単位を選択する
+ラジオボタンで1円単位、10円単位を選択する
+
+## 制作例
+https://github.com/takujiozaki/PHP_BASIC/tree/main/BREAK001PLUS
