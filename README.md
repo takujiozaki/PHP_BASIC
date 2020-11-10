@@ -25,6 +25,13 @@ https://github.com/takujiozaki/PHP_BASIC/blob/main/STEP005.md
 リクエストを跨ぐデータの受け渡し  
 https://github.com/takujiozaki/PHP_BASIC/blob/main/STEP006.md
 
+## 復習コンテンツ
+### 割り勘電卓
+https://github.com/takujiozaki/PHP_BASIC/blob/main/BREAK001.md  
+
+### ホロスコープ
+https://github.com/takujiozaki/PHP_BASIC/blob/main/BREAK002.md
+
 ## クラスとオブジェクト
 https://github.com/takujiozaki/PHP_BASIC/blob/main/STEP007.md
 
