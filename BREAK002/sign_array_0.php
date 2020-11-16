@@ -15,8 +15,8 @@ $sign_array = array(
     '水瓶座'=>'食べ過ぎに注意',
     '魚座'=>'金運アップ',
 );
-//自分の星座の運勢を表示する
-//echo $sign_array['天秤座'],PHP_EOL;
+
+$selected_sign = $_POST['sign'];
 
 ?>
 <!doctype html>
@@ -45,7 +45,7 @@ $sign_array = array(
         </form>
         <div class="alert alert-primary">
             <ul>
-                <li>選択した星座：</li>
+                <li>選択した星座：<?=$selected_sign?></li>
                 <li>今日の運勢：</li>
             </ul>
         </div>
