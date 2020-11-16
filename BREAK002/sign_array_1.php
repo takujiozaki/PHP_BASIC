@@ -27,6 +27,14 @@ $color = '';
 //POSTでアクセスされたら
 if($_SERVER['REQUEST_METHOD']=="POST"){
     $selected_sign = $_POST['sign'];
+    foreach($sign_array  as $array){
+        if($array['sign'] == $selected_sign){
+            $content = $array['content'];
+            $item = $array['item'];
+            $color = $array['color'];
+            break;
+        }
+    }
 }
 
 ?>
@@ -56,10 +64,10 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         </form>
         <div class="alert alert-primary">
             <ul>
-                <li>選択した星座：</li>
-                <li>今日の運勢：</li>
-                <li>ラッキーカラー：</li>
-                <li>ラッキーアイテム：</li>
+                <li>選択した星座：<?=$selected_sign?></li>
+                <li>今日の運勢：<?=$content?></li>
+                <li>ラッキーカラー：<?=$item?></li>
+                <li>ラッキーアイテム：<?=$color?></li>
             </ul>
         </div>
     </div>
