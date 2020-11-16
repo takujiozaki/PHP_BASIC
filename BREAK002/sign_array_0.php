@@ -15,8 +15,17 @@ $sign_array = array(
     '水瓶座'=>'食べ過ぎに注意',
     '魚座'=>'金運アップ',
 );
+/**
+ * 選択された星座を格納する変数
+ * 空欄で初期化
+*/
+$selected_sign ='';
 
-$selected_sign = $_POST['sign'];
+//POSTでアクセスされたら
+if($_SERVER['REQUEST_METHOD']=="POST"){
+    $selected_sign = $_POST['sign'];
+}
+
 
 ?>
 <!doctype html>
