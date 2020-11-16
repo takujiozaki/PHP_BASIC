@@ -36,7 +36,9 @@ $sign_array = array(
         <form action="" method="post">
             <label for="">星座を選択</label>
             <select name="sign" id="">
-                <option value=""></option>
+                <?php foreach($sign_array as $key=>$value):?>
+                <option value="<?=$key?>"><?=$key?></option>
+                <?php endforeach ?>
             </select>
             <buttun class="btn btn-primary:submit">占う</buttun>
         </form>
