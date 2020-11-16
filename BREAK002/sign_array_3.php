@@ -1,22 +1,31 @@
 <?php
+session_start();
+
 //日時の取得
 $current_day = date('Y/m/d');
 
-//星占いデータのURL
-$horoscope_url = 'http://api.jugemkey.jp/api/horoscope/free/'.$current_day;
+if(empty($_SESSION['horoscope_data'][$current_day])){
+    //星占いデータのURL
+    $horoscope_url = 'http://api.jugemkey.jp/api/horoscope/free/'.$current_day;
 
-//ファイルを取得
-$horoscope_json = file_get_contents($horoscope_url);
+    //ファイルを取得
+    $horoscope_json = file_get_contents($horoscope_url);
 
-//文字コードの変換
-$horoscope_json = mb_convert_encoding($horoscope_json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+    //文字コードの変換
+    $horoscope_json = mb_convert_encoding($horoscope_json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
 
-//連想配列に変換
-$horoscope_array = json_decode($horoscope_json,true);
+    //連想配列に変換
+    $horoscope_array = json_decode($horoscope_json,true);
 
-//星座を格納する配列
-//運勢を適当に修正する
-$sign_array = $horoscope_array['horoscope'][$current_day];
+    //星座を格納する配列
+    //運勢を適当に修正する
+    $sign_array = $horoscope_array['horoscope'][$current_day];
+    //セッションにデータを保管
+    $_SESSION['horoscope_data'][$current_day] = $sign_array;
+}else{
+    $sign_array = $_SESSION['horoscope_data'][$current_day];
+}
+
 /**
  * 選択された星座を格納する変数
  * 空欄で初期化
@@ -66,6 +75,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
             <button type="submit" class="btn btn-primary">占う</button>
         </form>
         <div class="alert alert-primary">
+        <h2><?=$current_day?></h2>
             <ul>
                 <li>選択した星座：<?=$selected_sign?></li>
                 <li>今日の運勢：<?=$content?></li>
