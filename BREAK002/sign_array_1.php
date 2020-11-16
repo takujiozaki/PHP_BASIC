@@ -29,7 +29,6 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     $selected_sign = $_POST['sign'];
 }
 
-
 ?>
 <!doctype html>
 <html lang="ja">
@@ -49,7 +48,9 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         <form action="" method="post">
             <label for="">星座を選択</label>
             <select name="sign" id="">
-                <option value=""></option>
+                <?php foreach($sign_array as $array):?>
+                <option value="<?=$array['sign']?>"><?=$array['sign']?></option>
+                <?php endforeach ?>
             </select>
             <button type="submit" class="btn btn-primary">占う</button>
         </form>
