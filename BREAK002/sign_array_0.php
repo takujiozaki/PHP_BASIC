@@ -17,6 +17,7 @@ $sign_array = array(
 );
 //自分の星座の運勢を表示する
 //echo $sign_array['天秤座'],PHP_EOL;
+
 ?>
 <!doctype html>
 <html lang="ja">
@@ -40,7 +41,7 @@ $sign_array = array(
                 <option value="<?=$key?>"><?=$key?></option>
                 <?php endforeach ?>
             </select>
-            <buttun class="btn btn-primary:submit">占う</buttun>
+            <button type="submit" class="btn btn-primary">占う</button>
         </form>
         <div class="alert alert-primary">
             <ul>
