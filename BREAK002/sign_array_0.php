@@ -2,7 +2,7 @@
 //星座を格納する配列
 //運勢を適当に修正する
 $sign_array = array(
-    '牡羊座' => 'とにかくラッキー',
+    '牡羊座' =>'とにかくラッキー',
     '牡牛座'=>'嫌なことあるかも？',
     '双子座'=>'最低',
     '蟹座'=>'めちゃくちゃ最低',
@@ -20,10 +20,12 @@ $sign_array = array(
  * 空欄で初期化
 */
 $selected_sign ='';
+$selected_horoscope = '';
 
 //POSTでアクセスされたら
 if($_SERVER['REQUEST_METHOD']=="POST"){
     $selected_sign = $_POST['sign'];
+    $selected_horoscope = $sign_array[$selected_sign];
 }
 
 
@@ -55,7 +57,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         <div class="alert alert-primary">
             <ul>
                 <li>選択した星座：<?=$selected_sign?></li>
-                <li>今日の運勢：</li>
+                <li>今日の運勢：<?=$selected_horoscope?></li>
             </ul>
         </div>
     </div>
