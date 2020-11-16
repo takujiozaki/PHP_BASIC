@@ -21,7 +21,7 @@
 ### ダミーデータの作成
 ```
 <?php
-$horoscope_array = array(
+$sign_array = array(
     ['sign' => "牡羊座", 'content' => '', 'item' => '', 'color' => ''],
     ['sign' => "牡牛座", 'content' => '', 'item' => '', 'color' => ''],
     ['sign' => "双子座", 'content' => '', 'item' => '', 'color' => ''],
