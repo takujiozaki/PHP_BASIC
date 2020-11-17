@@ -3,7 +3,7 @@ session_start();
 
 //日時の取得
 $current_day = date('Y/m/d');
-
+//APIの重複取得防止
 if(empty($_SESSION['horoscope_data'][$current_day])){
     //星占いデータのURL
     $horoscope_url = 'http://api.jugemkey.jp/api/horoscope/free/'.$current_day;
