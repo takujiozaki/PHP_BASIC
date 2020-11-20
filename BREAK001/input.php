@@ -1,4 +1,7 @@
 <?php
+/**
+ * 割り勘計算機入力
+ */
 session_start();
 require_once('functions.php');
 $price = '';
