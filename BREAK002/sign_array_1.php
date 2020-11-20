@@ -1,4 +1,7 @@
 <?php
+/**
+ * 連想配列を使った占いプログラム(多次元配列)
+ */
 //星座を格納する配列
 //運勢を適当に修正する
 $sign_array = array(
@@ -28,7 +31,8 @@ $color = '';
 if($_SERVER['REQUEST_METHOD']=="POST"){
     $selected_sign = $_POST['sign'];
     foreach($sign_array  as $array){
-        if($array['sign'] == $selected_sign){
+        //in_array関数で配列内に要素が含まれているかを検査
+        if(in_array($selected_sign,$array)){
             $content = $array['content'];
             $item = $array['item'];
             $color = $array['color'];
