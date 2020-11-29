@@ -99,9 +99,14 @@ PHPなどの動的型付け言語では宣言していないプロパティも�
 $s1 = new Student();
 $s1->belong = "情報セキュリティ";//オブジェクト内に$belongという変数が作られる
 ```
-## STATIC
+### STATIC
 staticをつけて宣言されたプロパティやメソッドは静的プロパティ、静的メソッドとよばれ、インスタンスではなくオブジェクトに属します。
 共にインスタンスされていなくても呼び出すことが可能です。
+
+### インスタンスとセッション
+セッション変数にインスタンスを格納する時はserialize()関数を用いる  
+セッション変数からインスタンスを取得する時はunserialize()関数を用いる  
+https://github.com/takujiozaki/PHP_BASIC/tree/main/SAMPLE09   
 
 ## オブジェクトの活用例
 ### DateTimeオブジェクト
@@ -117,9 +122,6 @@ $assignment->setDate(2020,4,1);
 $assignment->setTime(13,30,0);
 $assignment_datetime = $assignment->format('Y-m-d H:i:s');
 ```
-### インスタンスとセッション
-セッション変数にインスタンスを格納する時はserialize()関数を用いる  
-セッション変数からインスタンスを取得する時はunserialize()関数を用いる  
-https://github.com/takujiozaki/PHP_BASIC/tree/main/SAMPLE09   
 
-### PDOオブジェクト
+
+
