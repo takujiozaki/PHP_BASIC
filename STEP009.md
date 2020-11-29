@@ -1,12 +1,12 @@
 # PHP基礎 08
 ## クラスとオブジェクト(2)
 ### PDOオブジェクト
-PDO(PHP Data Objects)はデータベースに接続するためのオブジェクト
+PDO(PHP Data Objects)はデータベースに接続するためのオブジェクト  
 https://www.php.net/manual/ja/book.pdo.php
 
 ### インストール
 PDOはサーバーにモジュールとして組み込まれている必要があります。  
-ユーザーが個別にインストールできるものではありません。
+ユーザーが個別にインストールできるものではありません。  
 phpinfo関数で確認が可能です。
 
 ### 接続
@@ -34,7 +34,7 @@ PDOオブジェクトのコンストラクタは三つの引数を必要とし�
 new PDO(<接続情報, ユーザー名, パスワード>);  
 接続情報(DSL)には
 
-dbname : データベース名
+dbname : データベース名  
 host : データベースホスト
 
 を含みます。
@@ -155,7 +155,7 @@ Formから値を取得してデータベースに構築するアプリケーシ�
 | price  | int | 価格            | 
 
 #### 構成
-booklist.php
-本の一覧
-bookform.php
-本の追加
+- book_list.php(本の一覧)
+- book_form.php(本の情報追加)
+- book_form_confirm.php(本の情報追加確認)
+- book_form_complete.php(本の情報追加完了)
