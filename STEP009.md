@@ -159,3 +159,7 @@ Formから値を取得してデータベースに構築するアプリケーシ�
 - book_form.php(本の情報追加)
 - book_form_confirm.php(本の情報追加確認)
 - book_form_complete.php(本の情報追加完了)
+
+#### DBの準備
+DB(phpsample)に新しいテーブル(books)を作成。  
+数件、テストデータを入れて準備をします。  
