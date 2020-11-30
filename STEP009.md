@@ -163,3 +163,14 @@ Formから値を取得してデータベースに構築するアプリケーシ�
 #### DBの準備
 DB(phpsample)に新しいテーブル(books)を作成。  
 数件、テストデータを入れて準備をします。  
+```
+CREATE TABLE books (
+    book_id int primary key auto_increment,
+    title varchar(100),
+    author varchar(50),
+    publisher varchar(50),
+    price int
+);
+INSERT INTO books(title,author,publisher,price) VALUES ("PHP本格入門［上］　～プログラミングとオブジェクト指向の基礎からデータベース連携まで","大家 正登","技術評論社",3938);
+INSERT INTO books(title,author,publisher,price) VALUES ("よくわかるPHPの教科書　【PHP7対応版】","たにぐち まこと","マイナビ出版",2728);
+```
