@@ -174,3 +174,44 @@ CREATE TABLE books (
 INSERT INTO books(title,author,publisher,price) VALUES ("PHP本格入門［上］　～プログラミングとオブジェクト指向の基礎からデータベース連携まで","大家 正登","技術評論社",3938);
 INSERT INTO books(title,author,publisher,price) VALUES ("よくわかるPHPの教科書　【PHP7対応版】","たにぐち まこと","マイナビ出版",2728);
 ```
+
+#### 一覧表示のページを作成
+book_list.php
+```
+<?php
+$dsn = 'mysql:dbname=phpsample;host=127.0.0.1';
+$user = 'php';
+$password = 'Secret01%';
+
+try {
+    //DBに接続
+    $pdo = new PDO($dsn, $user, $password);
+    
+    //SQL
+    $sql = 'select book_id, title, author, publisher, price from books';
+
+    //実行
+    $sth = $pdo->query($sql);
+
+} catch (PDOException $e) {
+    echo "接続失敗: " . $e->getMessage() . "\n";
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html lang="ja".....
+```
+表示したい部分で展開する
+```
+<table>
+<?php foreach($sth as $row): ?>
+<tr>
+<td>$row['book_id']</td>
+<td>$row['title']</td>
+<td>$row['author']</td>
+<td>$row['publisher']</td>
+<td>$row['price']</td>
+</tr>
+<? endforeach ?>
+</table>
+```
