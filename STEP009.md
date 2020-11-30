@@ -206,12 +206,12 @@ try {
 <table>
 <?php foreach($sth as $row): ?>
 <tr>
-<td>$row['book_id']</td>
-<td>$row['title']</td>
-<td>$row['author']</td>
-<td>$row['publisher']</td>
-<td>$row['price']</td>
+<td><?=$row['book_id']?></td>
+<td>?=$row['title']?></td>
+<td>?=$row['author']?></td>
+<td>?=$row['publisher']?></td>
+<td>?=$row['price']?></td>
 </tr>
-<? endforeach ?>
+<?php endforeach ?>
 </table>
 ```
