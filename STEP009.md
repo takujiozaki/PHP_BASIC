@@ -134,8 +134,8 @@ https://www.php.net/manual/ja/class.pdostatement.php
 //SQL
 $sql = 'INSERT INTO user (name, password) VALUES(:name, :password)';
 /**略**/
-$stmt->bindParam(:name, $username);
-$stmt->bindParam(:password, $password);
+$stmt->bindParam(':name', $username);
+$stmt->bindParam(':password', $password);
 ```
 * * * 
 execute()メソッドの戻り値
