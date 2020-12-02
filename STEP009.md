@@ -107,7 +107,7 @@ try {
     $dbh = new PDO($dsn, $user, $password);
 
     //登録情報
-    $username = "國森菜々穂";
+    $username = "国森奈々穂";
     $password = "abcd1234";
 
     //SQL
