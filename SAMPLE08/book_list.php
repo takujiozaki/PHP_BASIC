@@ -58,7 +58,7 @@ try {
         <td><?=$book['author']?></td>
         <td><?=$book['publisher']?></td>
         <td><?=$book['price']?></td>
-        <td><a href="book_update_form.php?book_id=<?=$book['book_id']?>">修正</a></td>
+        <td><a href="book_update_form.php?book_id=<?=$book['book_id']?>" class="btn btn-sm btn-warning">修正</a></td>
       </tr>
       <?php endforeach ?>
     </table>
