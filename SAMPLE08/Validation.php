@@ -1,7 +1,10 @@
-class Validation{
+<?php
+class Validation
+{
+
     private $title;
     private $author;
-    private $publisher,
+    private $publisher;
     private $price;
     private $error_array;
 
@@ -13,10 +16,14 @@ class Validation{
         $this->error_array = array();
     }
 
-    public function vaidate(){
+    public function validate(){
         //内容をチェックする
+        if(mb_strlen($this->title) == 0){
+            array_push($this->error_array, "タイトルが空欄です");
+        }
+        if(mb_strlen($this->title) > 10){
+            array_push($this->error_array, "タイトルは10文字以内です");
+        }
         return $this->error_array;
     }
-
-
 }
