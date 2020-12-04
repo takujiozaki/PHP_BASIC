@@ -4,7 +4,7 @@ require_once('./Validation.php');
 $title = "";
 $author = "";
 $publisher = "";
-$price = 100;
+$price = '';
 
 $validate = new Validation($title, $author, $publisher, $price);
 $error_array = $validate->validate();
