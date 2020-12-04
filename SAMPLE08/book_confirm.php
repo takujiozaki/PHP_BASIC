@@ -25,11 +25,22 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
   );
 
   //バリデーション(次回授業で)
-  //何文字か？
-  var_dump(mb_strlen($title));
-  //数字か
-  var_dump(is_numeric($price));
+  $err_array = array();
 
+  if(mb_strlen($title) == 0){
+    array_push($err_array, "タイトルが空欄です");
+  }
+  if(mb_strlen($title) > 10){
+    array_push($err_array, "タイトルは10文字以内です");
+  }
+  if(!is_numeric($price)){
+    array_push($err_array, "価格が空欄か数字以外が入力されています");
+  }else{
+    if(intval($price) < 0){
+      array_push($err_array, "価格にマイナスの値が入力されています");
+    }
+  }
+  var_dump($err_array);
   //セッションに保存
   $_SESSION['book'] = $book;
 }else{
