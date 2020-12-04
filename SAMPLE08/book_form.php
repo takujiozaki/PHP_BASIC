@@ -21,6 +21,11 @@
  if(isset($_SESSION['error_array'])){
    //セッションのエラーを読み込む
    $error_array = $_SESSION['error_array'];
+   //セッションを消去
+   unset($_SESSION['error_array']);
+ }
+
+ if(isset($_SESSION['book'])){
    //修正用データを取得
    $book = $_SESSION['book'];
    $title = $book['title'];
@@ -28,7 +33,7 @@
    $publisher = $book['publisher'];
    $price = $book['price'];
    //セッションを消去
-   unset($_SESSION['error_array']);
+   unset($_SESSION['book']);
  }
 ?>
 <!doctype html>

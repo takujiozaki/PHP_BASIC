@@ -25,14 +25,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     'publisher' => $publisher,
     'price' => $price,
   );
+  //セッションに登録
+  $_SESSION['book'] = $book;
 
-  //バリデーション(次回授業で)
+  //バリデーション
   $validate = new Validation($title, $author, $publisher, $price);
   $error_array = $validate->validate();
   if(count($error_array)>0){//エラーがあれば
     //book_formに戻る
     $_SESSION['error_array'] = $error_array;
-    $_SESSION['book'] = $book;
     header('location:./book_form.php');
     exit();
   }
@@ -70,6 +71,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         <p>価格：<?=$price?></p>
       </div>
       <button type="submit" class="btn btn-primary">確認</button>
+      <a href="book_form.php" class="btn btn-info">戻る</a>
     </form>
     </div>
 
