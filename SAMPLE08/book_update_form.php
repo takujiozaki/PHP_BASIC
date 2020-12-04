@@ -1,4 +1,12 @@
 <?php
+
+//book_idがなければ一覧に戻る
+if(!isset($_GET['book_id'])){
+    header("location:book_list.php");
+    exit();
+}
+
+
 require_once('db_info.php');
 $book_id = $_GET['book_id'];
 $title = '';
@@ -16,6 +24,11 @@ try {
 
     $stmt->execute();
     $result = $stmt->fetch();
+    //対象がなければ終了
+    if(!$result){
+        die("指定されたデータはありません");
+        exit();
+    }
     $title = $result['title'];
     $author = $result['author'];
     $publisher = $result['publisher'];
