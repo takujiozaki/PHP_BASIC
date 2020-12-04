@@ -9,6 +9,8 @@
 //セッション利用の開始
 session_start();
 
+require_once('./Validation.php');
+
 //POST送信なら
 if($_SERVER['REQUEST_METHOD'] == "POST"){
   $title = htmlspecialchars($_POST['title']);
@@ -25,24 +27,18 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
   );
 
   //バリデーション(次回授業で)
-  $err_array = array();
+  $validate = new Validation($title, $author, $publisher, $price);
+  $error_array = $validate->validate();
 
-  if(mb_strlen($title) == 0){
-    array_push($err_array, "タイトルが空欄です");
+  if(count($error_array)>0){//エラーがあれば
+    //book_formに戻る
+    $_SESSION['error_array'] = $error_array;
+    header('location:./book_form.php');
+    exit();
+
+  }else{//エラーがなければセッションに保存
+    $_SESSION['book'] = $book;
   }
-  if(mb_strlen($title) > 10){
-    array_push($err_array, "タイトルは10文字以内です");
-  }
-  if(!is_numeric($price)){
-    array_push($err_array, "価格が空欄か数字以外が入力されています");
-  }else{
-    if(intval($price) < 0){
-      array_push($err_array, "価格にマイナスの値が入力されています");
-    }
-  }
-  var_dump($err_array);
-  //セッションに保存
-  $_SESSION['book'] = $book;
 }else{
   //GETアクセスなら入力フォームに戻す
   header('location:./book_form.php');
