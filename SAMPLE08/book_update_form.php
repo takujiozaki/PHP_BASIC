@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 //book_idがなければ一覧に戻る
 if(!isset($_GET['book_id'])){
     header("location:book_list.php");
@@ -15,28 +15,46 @@ $publisher = '';
 $price = '';
 $error_array = array();
 
-try {
-    //DBに接続
-    $pdo = new PDO($dsn, $user, $password);
-    $sql = 'select book_id, title, author, publisher, price from books where book_id = :book_id';
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(':book_id', $book_id);
+if(isset($_SESSION['error_array'])){
+    //セッションのエラーを読み込む
+    $error_array = $_SESSION['error_array'];
+    //セッションを消去
+    unset($_SESSION['error_array']);
+}
 
-    $stmt->execute();
-    $result = $stmt->fetch();
-    //対象がなければ終了
-    if(!$result){
-        die("指定されたデータはありません");
+if(isset($_SESSION['book'])){//セッションにあればデータを戻す
+    //修正用データを取得
+    $book = $_SESSION['book'];
+    $title = $book['title'];
+    $author = $book['author'];
+    $publisher = $book['publisher'];
+    $price = $book['price'];
+    //セッションを消去
+    unset($_SESSION['book']);
+}else{//なければDBから取得
+    try {
+        //DBに接続
+        $pdo = new PDO($dsn, $user, $password);
+        $sql = 'select book_id, title, author, publisher, price from books where book_id = :book_id';
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':book_id', $book_id);
+    
+        $stmt->execute();
+        $result = $stmt->fetch();
+        //対象がなければ終了
+        if(!$result){
+            die("指定されたデータはありません");
+            exit();
+        }
+        $title = $result['title'];
+        $author = $result['author'];
+        $publisher = $result['publisher'];
+        $price = $result['price'];
+    
+    }catch (PDOException $e) {
+        echo "接続失敗: " . $e->getMessage() . "\n";
         exit();
     }
-    $title = $result['title'];
-    $author = $result['author'];
-    $publisher = $result['publisher'];
-    $price = $result['price'];
-
-}catch (PDOException $e) {
-    echo "接続失敗: " . $e->getMessage() . "\n";
-    exit();
 }
 ?>
 <!doctype html>
@@ -78,6 +96,7 @@ try {
         <label for="price">価格</label>
         <input type="number" name="price" id="price" value="<?=$price?>">
       </div>
+      <input type="hidden" name="book_id" value="<?=$book_id?>">
       <button type="submit" class="btn btn-primary">確認</button>
     </form>
     </div>
