@@ -10,9 +10,23 @@
  //入力エラーでリダイレクトされたことになる
  session_start();
  $error_array = array();
+
+ //復元用変数
+ $title = '';
+ $author = '';
+ $publisher = '';
+ $price = '';
+
+
  if(isset($_SESSION['error_array'])){
    //セッションのエラーを読み込む
    $error_array = $_SESSION['error_array'];
+   //修正用データを取得
+   $book = $_SESSION['book'];
+   $title = $book['title'];
+   $author = $book['author'];
+   $publisher = $book['publisher'];
+   $price = $book['price'];
    //セッションを消去
    unset($_SESSION['error_array']);
  }
@@ -42,19 +56,19 @@
     <form action="book_confirm.php" method="post">
       <div>
         <label for="title">書名</label>
-        <input type="text" name="title" id="title">
+        <input type="text" name="title" id="title" value="<?=$title?>">
       </div>
       <div>
         <label for="author">著者</label>
-        <input type="text" name="author" id="author">
+        <input type="text" name="author" id="author" value="<?=$author?>">
       </div>
       <div>
         <label for="publisher">出版社</label>
-        <input type="text" name="publisher" id="publisher">
+        <input type="text" name="publisher" id="publisher" value="<?=$publisher?>">
       </div>
       <div>
         <label for="price">価格</label>
-        <input type="number" name="price" id="price">
+        <input type="number" name="price" id="price" value="<?=$price?>">
       </div>
       <button type="submit" class="btn btn-primary">確認</button>
     </form>

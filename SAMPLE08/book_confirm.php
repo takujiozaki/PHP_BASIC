@@ -29,15 +29,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
   //バリデーション(次回授業で)
   $validate = new Validation($title, $author, $publisher, $price);
   $error_array = $validate->validate();
-
   if(count($error_array)>0){//エラーがあれば
     //book_formに戻る
     $_SESSION['error_array'] = $error_array;
+    $_SESSION['book'] = $book;
     header('location:./book_form.php');
     exit();
-
-  }else{//エラーがなければセッションに保存
-    $_SESSION['book'] = $book;
   }
 }else{
   //GETアクセスなら入力フォームに戻す
