@@ -9,6 +9,9 @@
 //セッション利用の開始
 session_start();
 
+//DB情報の取得
+require_once('db_info.php');
+
 //セッションにデータがあれば
 if($_SESSION['book']){
   $book = $_SESSION['book'];
@@ -20,10 +23,6 @@ if($_SESSION['book']){
   $result_string = "";
 
   //MySQLに登録
-  // ドライバ呼び出しを使用して MySQL データベースに接続します
-  $dsn = 'mysql:dbname=phpsample;host=127.0.0.1';
-  $user = 'php';
-  $password = 'Secret01%';
 
   try {
     //接続
