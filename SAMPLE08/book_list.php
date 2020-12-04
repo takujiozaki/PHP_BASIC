@@ -44,6 +44,7 @@ try {
   <body>
     <div class="container">
     <h1>BOOK LIST</h1>
+    <p><a href="book_form.php" class="btn btn-primary">追加</a></p>
     <table class="table table-striped">
       <tr>
         <th>#</th>
