@@ -5,6 +5,17 @@
  * 書籍新規追加の入力フォーム
  * 
  */
+
+ //session['error_array']に値があれば
+ //入力エラーでリダイレクトされたことになる
+ session_start();
+ $error_array = array();
+ if(isset($_SESSION['error_array'])){
+   //セッションのエラーを読み込む
+   $error_array = $_SESSION['error_array'];
+   //セッションを消去
+   unset($_SESSION['error_array']);
+ }
 ?>
 <!doctype html>
 <html lang="ja">
@@ -21,6 +32,11 @@
   <body>
     <div class="container">
     <h1>BOOK FORM</h1>
+    <ul class="alert alert-danger">
+    <?php foreach($error_array as $error):?>
+      <li><?=$error ?></li>
+    <?php endforeach ?>
+    </ul>
     <form action="book_confirm.php" method="post">
       <div>
         <label for="title">書名</label>
