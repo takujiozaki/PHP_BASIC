@@ -32,11 +32,13 @@
   <body>
     <div class="container">
     <h1>BOOK FORM</h1>
+    <?php if(count($error_array)>0):?>
     <ul class="alert alert-danger">
-    <?php foreach($error_array as $error):?>
+      <?php foreach($error_array as $error):?>
       <li><?=$error ?></li>
-    <?php endforeach ?>
+      <?php endforeach ?>
     </ul>
+    <?php endif ?>
     <form action="book_confirm.php" method="post">
       <div>
         <label for="title">書名</label>
