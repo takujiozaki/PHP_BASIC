@@ -61,7 +61,7 @@ try {
       <?php endforeach ?>
     </ul>
     <?php endif ?>
-    <form action="book_confirm.php" method="post">
+    <form action="book_update_confirm.php" method="post">
       <div>
         <label for="title">書名</label>
         <input type="text" name="title" id="title" value="<?=$title?>">
