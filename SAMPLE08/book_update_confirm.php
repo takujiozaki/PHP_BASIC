@@ -74,7 +74,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         <p>価格：<?=$price?></p>
       </div>
       <button type="submit" class="btn btn-primary">確認</button>
-      <a href="book_update_form.php" class="btn btn-info">戻る</a>
+      <a href="book_update_form.php?book_id=<?=$book_id?>" class="btn btn-info">戻る</a>
     </form>
     </div>
 
