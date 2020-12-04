@@ -7,10 +7,7 @@
  * 
  */
 
-// ドライバ呼び出しを使用して MySQL データベースに接続します
-$dsn = 'mysql:dbname=phpsample;host=127.0.0.1';
-$user = 'php';
-$password = 'Secret01%';
+require_once('db_info.php');
 
 try {
     //DBに接続
@@ -52,6 +49,7 @@ try {
         <th>著者</th>
         <th>出版社</th>
         <th>価格</th>
+        <th>#️</th>
       </tr>
       <?php foreach($book_result as $book):?>
       <tr>
@@ -60,6 +58,7 @@ try {
         <td><?=$book['author']?></td>
         <td><?=$book['publisher']?></td>
         <td><?=$book['price']?></td>
+        <td><a href="book_update_form.php?book_id=<?=$book['book_id']?>">修正</a></td>
       </tr>
       <?php endforeach ?>
     </table>
