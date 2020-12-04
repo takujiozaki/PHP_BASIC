@@ -25,6 +25,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
   );
 
   //バリデーション(次回授業で)
+  //何文字か？
+  var_dump(mb_strlen($title));
+  //数字か
+  var_dump(is_numeric($price));
 
   //セッションに保存
   $_SESSION['book'] = $book;
