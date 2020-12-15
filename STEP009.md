@@ -1,4 +1,4 @@
-# PHP基礎 08
+# PHP基礎 09
 ## クラスとオブジェクト(2)
 ### PDOオブジェクト
 PDO(PHP Data Objects)はデータベースに接続するためのオブジェクト  
@@ -107,7 +107,7 @@ try {
     $dbh = new PDO($dsn, $user, $password);
 
     //登録情報
-    $username = "国森奈々穂";
+    $username = "邦盛　奈々帆";
     $password = "abcd1234";
 
     //SQL
