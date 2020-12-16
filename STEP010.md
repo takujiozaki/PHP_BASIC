@@ -74,7 +74,7 @@ class Villan {
     }
     
     public function say_hello():string{//挨拶
-        return '俺様は'.$this->name.'様だ！';
+        return '俺様は'.$this->name.'だ！';
     }
 
     public function say_dialogue():string{
