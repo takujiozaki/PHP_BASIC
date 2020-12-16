@@ -3,3 +3,7 @@ TEST
 template
 REST
 .DS_Store
+vendor
+composer.json
+composer.lock
+SAMPLE12/*
