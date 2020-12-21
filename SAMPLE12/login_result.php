@@ -27,7 +27,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
     }
     //認証処理
     $result = '失敗';
-    if($userid === $auth_user && $password === $auth_password){
+    if($userid === $auth_user && password_verify($password,$auth_password)){
         $result = '成功';
     }
 
