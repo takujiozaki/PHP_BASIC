@@ -17,4 +17,14 @@ class DBUsers extends DBConnect{
         $result = $stmt->fetch();
         return (!empty($result)) ? $result['password']: null;
     }
+
+    public function store(array $user):bool{
+        $sql = 'INSERT INTO users VALUES (:userid, :password, :user_name)';
+        $stmt = $this->dbh->prepare($sql);
+        $stmt->bindParam(':userid',$user['userid'],PDO::PARAM_STR);
+        $stmt->bindParam(':password',$user['password'],PDO::PARAM_STR);
+        $stmt->bindParam(':user_name',$user['user_name'],PDO::PARAM_STR);
+
+        return $result = $stmt->execute();
+    }
 }
