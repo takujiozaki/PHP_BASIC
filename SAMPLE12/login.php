@@ -27,7 +27,7 @@ if($_SERVER['REQUEST_METHOD'] === "GET"){
 <body>
 <h1>LOGIN</h1>
 
-<?php if(count($err_msgs)):?>
+<?php if(isset($err_msgs) && count($err_msgs)):?>
 <ul>
 <?php foreach($err_msgs as $err_msg):?>
 <li><?=$err_msg?></li>
