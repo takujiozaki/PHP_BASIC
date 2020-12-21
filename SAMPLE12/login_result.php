@@ -28,11 +28,34 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
     //認証処理
 
     //MySQLからuser情報を取り出す
-    
+    // ドライバ呼び出しを使用して MySQL データベースに接続します
+    $dsn = 'mysql:dbname=phpsample;host=127.0.0.1';
+    $dbuser = 'php';
+    $dbpassword = 'Secret01%';
 
-    if($userid === $auth_user && password_verify($password,$auth_password)){
+    $auth_password = '';
+    try {
+        $dbh = new PDO($dsn, $dbuser, $dbpassword);
+        $sql = 'SELECT password FROM users WHERE userid = :userid';
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':userid',$userid,PDO::PARAM_STR);
+        $stmt->execute();
+        $result = $stmt->fetch();
+        if(!empty($result)){
+            $auth_password = $result['password'];
+        }else{
+            die("USERが存在しません");
+        }
+    } catch (PDOException $e) {
+        echo "接続失敗: " . $e->getMessage() . "\n";
+    }
+    
+    if(password_verify($password,$auth_password)){
         set_auth_session($userid);
     }else{
+        $err_msgs = array('ログインに失敗しまいた');
+        @session_start();
+        $_SESSION['err_msgs'] = $err_msgs;
         send_redirect('login.php');
     }
 
