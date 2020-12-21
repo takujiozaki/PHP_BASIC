@@ -1,10 +1,21 @@
 <?php
-
 /**
  * login_result.php
  * ログイン処理をするプログラム
  * login.phpにPOSTされた情報を元にログイン処理を行い結果を表示する
  */
+if($_SERVER['REQUEST_METHOD'] === "POST"){
+    //USERIDとPASSWORDを取得
+    $userid = htmlspecialchars($_POST['userid']);
+    $password = htmlspecialchars($_POST['password']);
+
+    var_dump($userid);
+    var_dump($password);
+    exit();
+
+}else{
+    die('このページにはゲットでアクセス出来ません。');
+}
 
 ?>
 <!DOCTYPE html>
