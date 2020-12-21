@@ -26,6 +26,10 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
         send_redirect('login.php');
     }
     //認証処理
+
+    //MySQLからuser情報を取り出す
+    
+
     if($userid === $auth_user && password_verify($password,$auth_password)){
         set_auth_session($userid);
     }else{
