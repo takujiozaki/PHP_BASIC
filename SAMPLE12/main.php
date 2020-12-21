@@ -3,8 +3,7 @@ require_once('functions.php');
 //ログインセッションの確認
 @session_start();
 if(!verify_login()){
-    header('location:login.php');
-    exit();
+    send_redirect('login.php');
 }
 ?>
 <!DOCTYPE html>

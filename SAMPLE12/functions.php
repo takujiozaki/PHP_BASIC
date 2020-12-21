@@ -29,3 +29,9 @@ function get_error_msgs():array{
     }
     return $err_msgs;
 }
+
+//リダイレクト処理
+function send_redirect(string $url){
+    header('location:'.$url);
+    exit();
+}

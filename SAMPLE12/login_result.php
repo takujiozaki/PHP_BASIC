@@ -23,15 +23,13 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
     if(count($err_msgs)){
         @session_start();
         $_SESSION['err_msgs'] = $err_msgs;
-        header('location:login.php');
-        exit();
+        send_redirect('login.php');
     }
     //認証処理
     if($userid === $auth_user && password_verify($password,$auth_password)){
         set_auth_session($userid);
     }else{
-        header('location:login.php');
-        exit();
+        send_redirect('login.php');
     }
 
 }else{
