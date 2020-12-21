@@ -1,0 +1,8 @@
+mysql.server start
+mysql.server stop
+
+root/taku9219
+
+create user 'phper'@'localhost' identified by 'Secret0%';
+create database logintest default charset utf8;
+grant all on  logintest.* to 'phper'@'localhost';
