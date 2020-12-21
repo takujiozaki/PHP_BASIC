@@ -7,7 +7,13 @@
  */
 
 if($_SERVER['REQUEST_METHOD'] === "GET"){
+    //最初にログアウト
     @session_start();
+    if(isset($_SESSION['auth_user'])){
+        //セッションを破棄
+        unset($_SESSION['auth_user']);
+    }
+    //エラーを取得
     if(isset($_SESSION['err_msgs'])){
         $err_msgs = $_SESSION['err_msgs'];
         unset($_SESSION['err_msgs']);

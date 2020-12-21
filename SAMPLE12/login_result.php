@@ -26,9 +26,13 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
         exit();
     }
     //認証処理
-    $result = '失敗';
     if($userid === $auth_user && password_verify($password,$auth_password)){
+        @session_start();
+        $_SESSION['auth_user'] = $userid;
         $result = '成功';
+    }else{
+        header('location:login.php');
+        exit();
     }
 
 }else{
@@ -50,7 +54,8 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
 </head>
 <body>
 <h1>LOGIN</h1>
-<p>ログインが<?=$result?>しました。</p>
+<p>ログインが成功しました。</p>
+<p><a href="main.php">メイン画面に進む</a></p>
 <p><a href="login.php">ログイン画面に戻る</a></p>
 </body>
 </html>
