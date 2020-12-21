@@ -5,6 +5,7 @@
  * login.phpにPOSTされた情報を元にログイン処理を行い結果を表示する
  */
 require_once('env.php');
+require_once('functions.php');
 
 if($_SERVER['REQUEST_METHOD'] === "POST"){
     //USERIDとPASSWORDを取得
@@ -27,9 +28,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
     }
     //認証処理
     if($userid === $auth_user && password_verify($password,$auth_password)){
-        @session_start();
-        $_SESSION['auth_user'] = $userid;
-        $result = '成功';
+        set_auth_session($userid);
     }else{
         header('location:login.php');
         exit();

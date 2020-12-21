@@ -1,7 +1,8 @@
 <?php
+require_once('functions.php');
 //ログインセッションの確認
 @session_start();
-if(!isset($_SESSION['auth_user'])){
+if(!verify_login()){
     header('location:login.php');
     exit();
 }

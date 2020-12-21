@@ -6,18 +6,14 @@
  * login_result.phpにPOSTする
  */
 
+require_once('functions.php');
+
 if($_SERVER['REQUEST_METHOD'] === "GET"){
     //最初にログアウト
-    @session_start();
-    if(isset($_SESSION['auth_user'])){
-        //セッションを破棄
-        unset($_SESSION['auth_user']);
-    }
+    remove_auth_session();
     //エラーを取得
-    if(isset($_SESSION['err_msgs'])){
-        $err_msgs = $_SESSION['err_msgs'];
-        unset($_SESSION['err_msgs']);
-    }
+    $err_msgs = get_error_msgs();
+    
 }else{
     die('このページにはPOSTでアクセス出来ません。');
 }
