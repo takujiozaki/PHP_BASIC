@@ -14,8 +14,13 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
     exit();
 
 }else{
-    die('このページにはゲットでアクセス出来ません。');
-}
+    die('このページにはGETでアクセス出来ません。');
+    /*
+    * die()関数は
+    * echo 'このページにはGETでアクセス出来ません。';
+    * exit();
+    *　と同意。
+    */
 
 ?>
 <!DOCTYPE html>
