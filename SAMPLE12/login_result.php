@@ -17,5 +17,6 @@
 <body>
 <h1>LOGIN</h1>
 <p>ログインが成功（失敗）しました。</p>
+<p><a href="login.php">ログイン画面に戻る</a></p>
 </body>
 </html>
