@@ -1,7 +1,6 @@
 <?php
 require_once('functions.php');
 //ログインセッションの確認
-@session_start();
 if(!verify_login()){
     send_redirect('login.php');
 }
