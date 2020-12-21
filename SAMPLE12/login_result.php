@@ -4,14 +4,30 @@
  * ログイン処理をするプログラム
  * login.phpにPOSTされた情報を元にログイン処理を行い結果を表示する
  */
+
 if($_SERVER['REQUEST_METHOD'] === "POST"){
     //USERIDとPASSWORDを取得
     $userid = htmlspecialchars($_POST['userid']);
     $password = htmlspecialchars($_POST['password']);
 
-    var_dump($userid);
-    var_dump($password);
-    exit();
+    // var_dump($userid);
+    // var_dump($password);
+    // exit();
+
+    //validation
+    $err_msgs = array();
+    if(empty($userid)){
+        array_push($err_msgs,'ユーザー名が空欄です');
+    }
+    if(empty($password)){
+        array_push($err_msgs,'パスワードが空欄です');
+    }
+    if(count($err_msgs)){
+        @session_start();
+        $_SESSION['err_msgs'] = $err_msgs;
+        header('location:login.php');
+        exit();
+    }
 
 }else{
     die('このページにはGETでアクセス出来ません。');
@@ -21,7 +37,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
     * exit();
     *　と同意。
     */
-
+}
 ?>
 <!DOCTYPE html>
 <html lang="ja">
