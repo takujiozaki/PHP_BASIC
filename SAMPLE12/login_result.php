@@ -4,15 +4,12 @@
  * ログイン処理をするプログラム
  * login.phpにPOSTされた情報を元にログイン処理を行い結果を表示する
  */
+require_once('env.php');
 
 if($_SERVER['REQUEST_METHOD'] === "POST"){
     //USERIDとPASSWORDを取得
     $userid = htmlspecialchars($_POST['userid']);
     $password = htmlspecialchars($_POST['password']);
-
-    // var_dump($userid);
-    // var_dump($password);
-    // exit();
 
     //validation
     $err_msgs = array();
@@ -27,6 +24,11 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
         $_SESSION['err_msgs'] = $err_msgs;
         header('location:login.php');
         exit();
+    }
+    //認証処理
+    $result = '失敗';
+    if($userid === $auth_user && $password === $auth_password){
+        $result = '成功';
     }
 
 }else{
@@ -48,7 +50,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
 </head>
 <body>
 <h1>LOGIN</h1>
-<p>ログインが成功（失敗）しました。</p>
+<p>ログインが<?=$result?>しました。</p>
 <p><a href="login.php">ログイン画面に戻る</a></p>
 </body>
 </html>
