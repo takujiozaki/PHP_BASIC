@@ -8,3 +8,6 @@ composer.json
 composer.lock
 SAMPLE11/*
 SAMPLE12/templates_c/*
+SAMPLE12/libs/*
+SAMPLE12/cache/*
+SAMPLE12/configs/*
