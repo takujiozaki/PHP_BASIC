@@ -6,46 +6,58 @@
  * login_result.phpにPOSTする
  */
 
+require_once('libs/Smarty.class.php');
 require_once('functions.php');
+require_once('DBUsers.php');
 
 if($_SERVER['REQUEST_METHOD'] === "GET"){
     //最初にログアウト
     remove_auth_session();
     //エラーを取得
     $err_msgs = get_error_msgs();
-    
+
+    //page title
+    $title = "LOGIN";
+
+    //View
+    $smarty = new Smarty();
+    $smarty->assign(compact('title','err_msgs'));
+    $smarty->display('login.tpl');
+
+    //POST
 }else{
-    die('このページにはPOSTでアクセス出来ません。');
+    
+    //USERIDとPASSWORDを取得
+    $userid = htmlspecialchars($_POST['userid']);
+    $password = htmlspecialchars($_POST['password']);
+
+    //validation
+    $err_msgs = array();
+    if(empty($userid)){
+        array_push($err_msgs,'ユーザー名が空欄です');
+    }
+    if(empty($password)){
+        array_push($err_msgs,'パスワードが空欄です');
+    }
+    if(count($err_msgs)){
+        @session_start();
+        $_SESSION['err_msgs'] = $err_msgs;
+        send_redirect($_SERVER['REQUEST_URI']);
+    }
+    //認証処理
+    $dbusers = new DBUsers();
+    $auth_password = $dbusers->get_password_by_userid($userid);
+    
+    //認証成功
+    if(password_verify($password,$auth_password)){
+        set_auth_session($userid);
+        send_redirect('login_result.php');
+        //die('ログイン成功');
+    //認証失敗
+    }else{
+        $err_msgs = array('ログインに失敗しまいた');
+        @session_start();
+        $_SESSION['err_msgs'] = $err_msgs;
+        send_redirect($_SERVER['REQUEST_URI']);
+    }
 }
-
-?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<h1>LOGIN</h1>
-
-<?php if(isset($err_msgs) && count($err_msgs)):?>
-<ul>
-<?php foreach($err_msgs as $err_msg):?>
-<li><?=$err_msg?></li>
-<?php endforeach ?>
-</ul>
-<?php endif ?>
-<form action="login_result.php" method="post">
-<div>
-<label for="userid">ユーザーID</label>
-<input type="text" name="userid" id="userid">
-</div>
-<div>
-<label for="password">パスワード</label>
-<input type="password" name="password" id="password">
-</div>
-<button type="submit">ログイン</button>
-</form> 
-</body>
-</html>

@@ -19,12 +19,6 @@ function remove_auth_session():void{
     }
 }
 
-//login済ならユーザーを取得
-function get_login_user(){
-    @session_start();
-    return (isset($_SESSION['auth_user'])) ? $_SESSION['auth_user'] : null;
-}
-
 //エラー処理を取得
 function get_error_msgs():array{
     @session_start();
@@ -36,17 +30,8 @@ function get_error_msgs():array{
     return $err_msgs;
 }
 
-//セッションから登録用user情報を取得
-function get_userinfo(){
-    @session_start();
-    return (isset($_SESSION['user_info'])) ? $_SESSION['user_info'] : null;
-}
-
 //リダイレクト処理
 function send_redirect(string $url){
     header('location:'.$url);
     exit();
 }
-
-
-
