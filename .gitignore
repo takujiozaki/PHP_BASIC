@@ -11,3 +11,5 @@ SAMPLE12/templates_c/*
 SAMPLE12/libs/*
 SAMPLE12/cache/*
 SAMPLE12/configs/*
+php_mvc/libs/*
+php_mvc/templates_c/*
